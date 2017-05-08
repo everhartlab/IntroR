@@ -35,8 +35,9 @@ Quoted directly from [Sparks et al, 2008][Disease Progress Over Time]:
 
 Sparks, A.H., P.D. Esker, M. Bates, W. Dall' Acqua, Z. Guo, V. Segovia, S.D.
 Silwal, S. Tolos, and K.A. Garrett, 2008. Ecology and Epidemiology in R: Disease
-Progress over Time. The Plant Health Instructor. DOI:10.1094/PHI-A-2008-0129-02.
+Progress over Time. The Plant Health Instructor. 
+[DOI:10.1094/PHI-A-2008-0129-02][Disease Progress Over Time].
 
-[data set]: data/FungicideExample.csv
+[data set]: https://github.com/everhartlab/IntroR/blob/master/data/FungicideExample.csv
 [Disease Progress Over Time]: http://dx.doi.org/10.1094/PHI-A-2008-0129-02
 [stripe rust]: http://www.apsnet.org/edcenter/advanced/topics/EcologyAndEpidemiologyInR/DiseaseProgress/Pages/AUDPC.aspx "Using the area under the disease progress curve to compare disease severity"
