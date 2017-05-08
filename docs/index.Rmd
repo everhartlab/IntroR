@@ -1,4 +1,4 @@
-# IntroR
+# R for Plant Pathologists
 
 An introduction to R for plant pathologists written by Drs. Sydney E. Everhart
 and Zhian N. Kamvar
