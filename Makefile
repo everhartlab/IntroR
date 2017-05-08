@@ -2,13 +2,16 @@ HTML_FILES := $(patsubst %.Rmd, %.html ,$(wildcard docs/*.Rmd))
 HTML_FILES := $(filter-out docs/_sessionInfo.html, $(HTML_FILES))
 
 .PHONY: all
-all : docs/index.Rmd html
+all : html
 
 .PHONY : html
-html : $(HTML_FILES)
+html : docs/index.html docs/data.html $(HTML_FILES)
 
 docs/index.Rmd : README.md
-	sed '1d;2d;6d' README.md > docs/index.Rmd # remove first, second, and sixth lines
+	sed '1d;2d;6d' $< > $@ # remove first, second, and sixth lines
+
+docs/data.Rmd : data/README.md
+	cat docs/data.txt $< > $@
 
 %.html : %.Rmd
 	R --slave -e "rmarkdown::render_site('$<')"

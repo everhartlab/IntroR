@@ -2,7 +2,6 @@
 title: "About This Website"
 ---
 
-More about this website.
+This website was built using R and Rmarkdown.
 
-```{r, child="_sessionInfo.Rmd"}
-```
+Github: https://github.com/everhartlab/IntroR

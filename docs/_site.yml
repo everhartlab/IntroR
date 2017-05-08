@@ -6,7 +6,11 @@ navbar:
     - text: "Home"
       href: index.html
     - text: "About"
-      href: about.html
+      menu:
+        - text: "Data Sets"
+          href: data.html
+        - text: "About This Site"
+          href: about.html
 output:
   html_document:
     toc: true
