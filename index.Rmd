@@ -1,0 +1,8 @@
+---
+title: "index"
+---
+
+Hello, World!
+
+```{r, child="_sessionInfo.Rmd"}
+```
