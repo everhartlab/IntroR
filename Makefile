@@ -8,7 +8,7 @@ all : docs/index.Rmd html
 html : $(HTML_FILES)
 
 docs/index.Rmd : README.md
-	cp README.md docs/index.Rmd
+	sed '1d' README.md > docs/index.Rmd
 
 %.html : %.Rmd
 	R --slave -e "rmarkdown::render_site('$<')"
