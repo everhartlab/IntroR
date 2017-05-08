@@ -1,5 +1,5 @@
 ---
-title: "index"
+title: "Introduction to R for Plant Pathologists"
 ---
 
 Hello, World!
