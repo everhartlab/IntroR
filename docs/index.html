@@ -11,7 +11,7 @@
 
 
 
-<title>Introduction to R for Plant Pathologists</title>
+<title></title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -297,34 +297,39 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Introduction to R for Plant Pathologists</h1>
 
 </div>
 
 
-<p>Hello, World!</p>
-<p>Session information:</p>
-<pre class="r"><code>sessionInfo()</code></pre>
-<pre><code>## R version 3.4.0 (2017-04-21)
-## Platform: x86_64-apple-darwin15.6.0 (64-bit)
-## Running under: macOS Sierra 10.12.4
-## 
-## Matrix products: default
-## BLAS: /Library/Frameworks/R.framework/Versions/3.4/Resources/lib/libRblas.0.dylib
-## LAPACK: /Library/Frameworks/R.framework/Versions/3.4/Resources/lib/libRlapack.dylib
-## 
-## locale:
-## [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
-## 
-## attached base packages:
-## [1] stats     graphics  grDevices utils     datasets  methods   base     
-## 
-## loaded via a namespace (and not attached):
-##  [1] compiler_3.4.0     backports_1.0.5    magrittr_1.5      
-##  [4] rprojroot_1.2      tools_3.4.0        htmltools_0.3.6   
-##  [7] yaml_2.1.14        Rcpp_0.12.10       stringi_1.1.5     
-## [10] rmarkdown_1.5.9000 knitr_1.15.1       stringr_1.2.0     
-## [13] digest_0.6.12      evaluate_0.10</code></pre>
+<div id="intror" class="section level1">
+<h1>IntroR</h1>
+<p>An introduction to R for plant pathologists written by Drs. Sydney E. Everhart and Zhian N. Kamvar</p>
+<p>This repository is intended to serve as an additional resource for short workshops given at Univeristy of Nebraska and The 2017 North-Central American Phytopathological Society Meeting.</p>
+<div id="about" class="section level2">
+<h2>About</h2>
+<p>This introduction to R is designed to be a companion to a workshop lasting 3 hours introducing plant pathologists to the basics of R by using a <a href="http://www.apsnet.org/edcenter/advanced/topics/EcologyAndEpidemiologyInR/DiseaseProgress/Pages/StripeRust.aspx" title="APS Education Center: Using the area under the disease progress curve to compare disease severity">real world stripe rust example</a>.</p>
+</div>
+<div id="goals" class="section level2">
+<h2>Goals</h2>
+<p>As a result of taking this workshop you should be able to:</p>
+<ul>
+<li>find, download, and load necessary packages for analysis</li>
+<li>load tabular data into R</li>
+<li>understand the basics of data manipulation in R</li>
+<li>know what a data frame, vector, and function are</li>
+<li>summarize data</li>
+<li>visualize data</li>
+<li>troubleshoot commmon problems</li>
+</ul>
+</div>
+<div id="website" class="section level2">
+<h2>Website</h2>
+<p>The website located at <a href="http://everhartlab.github.io/IntroR" class="uri">http://everhartlab.github.io/IntroR</a> can be build via the <code>make</code> program:</p>
+<pre class="make"><code>make clean # run this to build the site from scratch
+make</code></pre>
+<p>Note: if the README.md is changed, make will force-update the index.Rmd and in turn force update the corresponding HTML.</p>
+</div>
+</div>
 
 
 

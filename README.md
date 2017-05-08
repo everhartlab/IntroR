@@ -25,7 +25,7 @@ As a result of taking this workshop you should be able to:
  - visualize data
  - troubleshoot commmon problems
 
-[real world stripe rust example]: http://www.apsnet.org/edcenter/advanced/topics/EcologyAndEpidemiologyInR/DiseaseProgress/Pages/StripeRust.aspx "Using the area under the disease progress curve to compare disease severity"
+[real world stripe rust example]: http://www.apsnet.org/edcenter/advanced/topics/EcologyAndEpidemiologyInR/DiseaseProgress/Pages/StripeRust.aspx "APS Education Center: Using the area under the disease progress curve to compare disease severity"
 
 ## Website
 
@@ -36,3 +36,6 @@ The website located at http://everhartlab.github.io/IntroR can be build via the
 make clean # run this to build the site from scratch
 make
 ```
+
+Note: if the README.md is changed, make will force-update the index.Rmd and in
+turn force update the corresponding HTML.
