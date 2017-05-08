@@ -8,7 +8,7 @@ all : docs/index.Rmd html
 html : $(HTML_FILES)
 
 docs/index.Rmd : README.md
-	sed '1d' README.md > docs/index.Rmd
+	sed '1d;2d;6d' README.md > docs/index.Rmd # remove first, second, and sixth lines
 
 %.html : %.Rmd
 	R --slave -e "rmarkdown::render_site('$<')"

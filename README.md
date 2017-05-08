@@ -1,7 +1,9 @@
-# R for Plant Pathologists    
+# R for Plant Pathologists
+<!--
 ---
 title: "R for Plant Pathologists"
 ---
+-->
 
 
 An introduction to R for plant pathologists written by Drs. Sydney E. Everhart
