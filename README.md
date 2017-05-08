@@ -6,3 +6,13 @@ and Zhian N. Kamvar
 This repository is intended to serve as an additional resource for short 
 workshops given at Univeristy of Nebraska and The 2017 North-Central American
 Phytopathological Society Meeting. 
+
+## Website
+
+The website located at http://everhartlab.github.io/IntroR can be build via the
+`make` program:
+
+```make
+make clean # run this to build the site from scratch
+make
+```
