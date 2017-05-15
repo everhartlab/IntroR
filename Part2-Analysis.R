@@ -50,7 +50,7 @@ list.files("data")
 # figuring out how you can use a function is to look at it's help page. The way
 # you can do that is by typing either help("function_name") or ?function_name.
 
-if (interactive()) readline("
+readline("
 
 Type ?read.table and answer these three questions:
      
@@ -128,3 +128,58 @@ install.packages("agricolae", repos = "https://cran.rstudio.com")
 # the functions and data sets within that package. You can find out about what
 # functions are avialable with help(package = "agricolae").
 # 
+# To accomplish our task, however, we need to find out how to use the `audpc()`
+# function. First we should load the agricolae package
+
+library("agricolae")
+
+# Now we can look up help for `audpc()`
+
+?audpc
+
+# This function will take in a data frame of severity and a vector of dates. 
+# Since our vector of dates is in the first column, we will need to manipulate
+# the data frame by subsetting. 
+
+jdate <- fungicide$Julian.Date # this is also the first column
+jdate
+fungicide.audpc <- audpc(evaluation = fungicide[, -1], dates = jdate, type = "relative")
+
+#
+# Well this doesn't look good. What can this error message mean? Let's take a 
+# look at the audpc help page one more time; this time, we'll look at the
+# Examples section. Try to copy and paste the code one line at a time and see
+# what happens. Check the evaluaton data relative to the dates and see how it's
+# relevant.
+
+readline("Stop and look at the examples from ?audpc. Press ENTER when done ")
+
+# We can see from example 3, that the data must be arranged where dates are in
+# separate columns. We need to transpose our data. To do this, we can use the
+# `t()` function:
+
+t(fungicide[, -1])
+
+# Now we can plug this into the `audpc()` function:
+
+fungicide.audpc <- audpc(evaluation = t(fungicide[, -1]), dates = jdate, type = "relative")
+fungicide.audpc
+
+# This gives us a vector with the AUDPC values per treatment, but if we wanted
+# to present this as a table in a paper, we would need to export it to a csv 
+# file. To do this, we can make this into a matrix by using the `matrix()` 
+# functon, using the AUDPC data as input to fill a 3 x 2 matrix with each
+# cultivar, control first and then treatment.
+
+fungicide.res <- matrix(fungicide.audpc, nrow = 3, ncol = 2, byrow = TRUE)
+fungicide.res
+rownames(fungicide.res) <- c("2137", "Cutter", "Jagger")
+colnames(fungicide.res) <- c("Control", "Treated")
+fungicide.res
+
+# We can save the matrix using `write.table()`
+
+dir.create("results")
+write.table(fungicide.res, file = "results/audpc.csv", sep = ",", 
+            col.names = NA,
+            row.names = TRUE)
