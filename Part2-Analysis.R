@@ -89,4 +89,42 @@ str(fungicide)
 # Part III: Finding the right tool for the job
 # --------------------------------------------
 # 
+# The data presented here are from
+# http://www.apsnet.org/edcenter/advanced/topics/EcologyAndEpidemiologyInR/DiseaseProgress/Pages/StripeRust.aspx
+# and consist of three cultivars of wheat treated with different fungicides 
+# Jagger wheat is a succeptible variety whereas Cutter and 2137 are both 
+# resistant varieties. It is assumed that the fungicide will only be able to 
+# prevent new infections for two weeks after applicaton. With these data, we 
+# want to answer the following questions:
+# 
+#  1. How does the size of the fungicide effect compare to the effect of
+#     resistance? 
+#  2. Would it be the same as resistance?
+#
+# To answer these questions, we will use the summary statistic, Area Under the
+# Disease Progress Curve (AUDPC). 
+# 
+# So, how do you calculate this? You could code the trapezoid rule yourself, OR
+# you could find a package that was designed for this. 
+
+readline("
+
+Do an internet search for AUDPC in R. What did you find?
+
+         hit ENTER to continue. ")
+
+# The first thing that likely popped up was the function `audpc()` in the
+# *agricolae* package. If we want to use it, we can download the package to our
+# computer with the function `install.packages()`. This will install a package
+# from CRAN and place it into your R *Library*. Where is your R library? Type
+# `.libPaths()` to find out!
+
+.libPaths()
+
+install.packages("agricolae", repos = "https://cran.rstudio.com")
+
+# Now that we have the *agricolae* package installed, we can load into our R
+# workspace using the `library()` function, which looks in our library and loads
+# the functions and data sets within that package. You can find out about what
+# functions are avialable with help(package = "agricolae").
 # 
