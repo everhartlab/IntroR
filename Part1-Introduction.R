@@ -1,5 +1,5 @@
 # 
-# Let's get familiar with R
+# Let's get familiar with R 
 # =========================
 # 
 # In this section we will investigate the following questions:
@@ -8,7 +8,7 @@
 #  1. How to use this R script
 #  2. Creating objects
 #  3. Sequences and vectors
-#  4. Matrices and evaluating a matrix#  
+#  4. Matrices and evaluating a matrix
 #  
 # Part 1: How to use this R scrpt
 # -------------------------------
