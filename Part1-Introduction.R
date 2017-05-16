@@ -18,11 +18,19 @@
 #
 # The console (below) is for submitting commands to be interpreted in R. To run a 
 # command in the console, you can copy+paste it into the console and press enter.  
-# 
+##
+# Copy and paste the following into the console and run it: 
+
+    print("the teacher's name is Sydney")  
+ 
+#
 # Run a single line of your script in the console by placing your cursor on the line
 # you want to submit and use your cursor to press the "Run" button at the top right.
 # You can also use the shortcut key strokes cmd+enter (mac) or ctrl+enter (PC) to run 
 # a single line at a time.
+#
+# You can also select only part of a line to have it run on the console.  Try running
+# the following command without copy+paste:   print("my name is _____") 
 #
 # Part 2: Creating objects
 # -------------------------
@@ -32,10 +40,13 @@
 # control of stripe rust disease. Typically, different wheat cultivars have different
 # susceptibility to disease. Fungicides can also help reduce disease. 
 # 
-# This experiment rated stripe rust disease severity for three cultivars, with and without
-# fungicide, over the course of a growing season.  The following are data that were
-# obtained from the experiment. 
+# The scientist performing this experiment had field plots in a single location.  She
+# rated stripe rust disease severity on three cultivars, with and without fungicide, 
+# over the course of a growing season. The following are raw data that were obtained 
+# from the experiment. 
 # 
+# 
+#
 #
 # 
 # Part 3: Sequences and vectors
