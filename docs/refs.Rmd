@@ -1,0 +1,10 @@
+---
+title: "References"
+---
+
+# Packages
+
+Interactive introduction to R using *swirl* so you can learn R, using R.
+Download from CRAN: https://cran.r-project.org/web/packages/swirl/index.html
+Swirl website: http://swirlstats.com/
+
