@@ -18,7 +18,7 @@
 #
 # The console (below) is for submitting commands to be interpreted in R. To run a 
 # command in the console, you can copy+paste it into the console and press enter.  
-##
+#
 # Copy and paste the following into the console and run it: 
 
     print("the teacher's name is Sydney")  
@@ -32,22 +32,29 @@
 # You can also select only part of a line to have it run on the console.  Try running
 # the following command without copy+paste:   print("my name is _____") 
 #
+#
 # Part 2: Creating objects
 # -------------------------
 #
 # It is easier to understand objects if we are working with a real data set. We have
 # obtained data from an experiment that was designed to assess the best method for 
-# control of stripe rust disease. Typically, different wheat cultivars have different
-# susceptibility to disease. Fungicides can also help reduce disease. 
+# control of stripe rust disease. Fungicides can be used help reduce disease. 
 # 
-# The scientist performing this experiment had field plots in a single location.  She
-# rated stripe rust disease severity on three cultivars, with and without fungicide, 
-# over the course of a growing season. The following are raw data that were obtained 
+# Anne was the scientist performing this experiment had field plots in a single location.
+# She rated stripe rust disease severity on the wheat cultivar 'Cutter' that was either 
+# treated with fungicide or *not* treated with fungicide. Her ratings for disease
+# were made nine times during the growing season.  Here are her disease severity data
 # from the experiment. 
 # 
+#  'Cutter' without fungicide: 0, 0, 0, 0, 0, 0, 0, 1.15, 3.62, 17.89
+#  'Cutter' with fungicide: 0, 0, 0, 0, 0, 0, 1.79, 2.4, 6.21
+#
+# Anne is summarizing her data and wants to know how much fungicide application was able
+# to reduce the disease severity.  She wants to know this for each day and also for the 
+# cumulative disease severity rating.  
 # 
-#
-#
+# This is a 
+# 
 # 
 # Part 3: Sequences and vectors
 # -----------------------------
