@@ -26,6 +26,17 @@
 #
 # Part 2: Creating objects
 # -------------------------
+#
+# It is easier to understand objects if we are working with a real data set. We have
+# obtained data from an experiment that was designed to assess the best method for 
+# control of stripe rust disease. Typically, different wheat cultivars have different
+# susceptibility to disease. Fungicides can also help reduce disease. 
+# 
+# This experiment rated stripe rust disease severity for three cultivars, with and without
+# fungicide, over the course of a growing season.  The following are data that were
+# obtained from the experiment. 
+# 
+#
 # 
 # Part 3: Sequences and vectors
 # -----------------------------
