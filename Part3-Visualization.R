@@ -86,16 +86,19 @@ is.data.frame(fungicide)
 # 
 # In order to use our data with ggplot2, we need to make sure it is in a "tidy"
 # form where we have one observation per row. We currently have six observations
-# per row. Thus, we will need to reshape this data from this
+# per row. Thus, we will need to reshape this data from this:
 # 
+# ```
 #   Julian.Date TwentyOneThirtySevenWheat TwentyOneThirtySevenWheat.trt CutterWheat CutterWheat.Trt JaggerWheat JaggerWheat.Trt
 # 1         139                      2.34                          1.81        1.15            1.79        1.85            2.27
 # 2         146                      7.56                          7.89        3.62            2.40        6.92            5.00
 # 3         154                     28.78                         15.04       17.89            6.21       47.39           20.17
+# ```
 # 
-# To this
+# to this:
 # 
-#    Fungicide Julian.Date                  Cultivar Severity
+# ```
+#   Experiment Julian.Date                  Cultivar Severity
 # 1    control         139 TwentyOneThirtySevenWheat     2.34
 # 2    control         146 TwentyOneThirtySevenWheat     7.56
 # 3    control         154 TwentyOneThirtySevenWheat    28.78
@@ -114,8 +117,14 @@ is.data.frame(fungicide)
 # 16 treatment         139               JaggerWheat     2.27
 # 17 treatment         146               JaggerWheat     5.00
 # 18 treatment         154               JaggerWheat    20.17
+# ```
 # 
-# This process will 
+# This process will take three steps
+#  
+#  1. subset control and treatment data into separate data frames
+#  2. collect each record into a single row with the *tidyr* function `gather()`
+#  3. combine the two data frames and create a new column called "Experiment"
+#     with the *dplyr* function `bind_rows()`
 # 
 
 control   <- fungicide[, c(1, 2, 4, 6)]
