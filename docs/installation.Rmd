@@ -30,6 +30,7 @@ everything up to date, UBC's [STAT545] page is an excellent resource.
  - [R]
  - [RStudio]
  - [Workshop Materials] (zip file; unzip to Desktop)
+ - (Once you've installed R) packages "[tidyverse]" and "[agricolae]"
 
 ### Verification
 
@@ -71,8 +72,18 @@ so that you can get comfortable typing these commands. For those who feel the
 pace is too fast, or are unable to type the commands, feel free to execute the
 code in these scripts to follow along.
 
+### Installing Packages
+
+To install [tidyverse] and [agricolae] to your system, open R and type:
+
+```{r, eval = FALSE}
+install.packages(c("tidyverse", "agricolae"), repos = "https://cran.rstudio.com")
+```
+
 
 [stat545]: http://stat545.com/block000_r-rstudio-install.html
 [R]: https://cloud.r-project.org/
 [RStudio]: https://www.rstudio.com/products/rstudio/download/
 [Workshop Materials]: https://github.com/everhartlab/IntroR/archive/master.zip
+[agricolae]: http://tarwi.lamolina.edu.pe/~fmendiburu/
+[tidyverse]: http://tidyverse.org/
