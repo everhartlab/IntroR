@@ -13,21 +13,28 @@
 # Part 1: How to use this R scrpt
 # -------------------------------
 # 
-# A script is a text document that contains instructions and commands
-# The # symbol is used to leave comments, which R will not try to interpret as a command
-#
-# The console (below) is for submitting commands to be interpreted in R. To run a 
-# command in the console, you can copy+paste it into the console and press enter.  
-#
+# A script is a text document that contains instructions and commands The #
+# symbol is used to leave comments, which R will not try to interpret as a
+# command.
+# 
+# The console (below) is for submitting commands to be interpreted in R. To run
+# a command in the console, you can copy+paste it into the console and press
+# enter.
+# 
 # Copy and paste the following into the console and run it: 
 
     print("the teacher's name is Sydney")  
  
 #
-# Run a single line of your script in the console by placing your cursor on the line
-# you want to submit and use your cursor to press the "Run" button at the top right.
-# You can also use the shortcut key strokes cmd+enter (mac) or ctrl+enter (PC) to run 
-# a single line at a time.
+# Run a single line of your script in the console by placing your cursor on the
+# line you want to submit and use your cursor to press the "Run" button at the
+# top right. You can also use the shortcut key strokes cmd+enter (mac) or
+# ctrl+enter (PC) to run a single line at a time.
+#
+#The two other most important keyboard shortcuts that you'll want to use are the
+#*Tab* key to auto-complete your typing at the command line and ctrl+up arrow or
+#cmd+up arrow to access the most recently typed commands.
+
 #
 # You can also select only part of a line to have it run on the console.  Try running
 # the following command without copy+paste:   print("my name is _____") 
