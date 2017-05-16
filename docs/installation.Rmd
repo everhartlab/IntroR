@@ -36,11 +36,12 @@ everything up to date, UBC's [STAT545] page is an excellent resource.
 Once you have installed [R], we should verify that you have the correct version.
 
  1. Open R (or RStudio) on your computer
- 2. Enter the following in the R console after the `>`
-      ```r
-      R.version.string == "R version 3.4.0 (2017-04-21)"
-      ```
- 3. Make sure the result is `[1] TRUE`. **If the result is `[1] FALSE`, please quit R and try the installation again**.
+ 2. Enter the following in the R console after the `>`    
+        
+        R.version.string == "R version 3.4.0 (2017-04-21)"
+        
+ 3. Make sure the result is **`[1] TRUE`**    
+    (If the result is `[1] FALSE`, please quit R and try the installation again)
  
  
 ### Workshop Materials
