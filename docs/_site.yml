@@ -5,6 +5,10 @@ navbar:
   left:
     - text: "Home"
       href: index.html
+    - text: "Workshop"
+      menu:
+        - text: "Before the Workshop (Installation)"
+          href: installation.html
     - text: "About"
       menu:
         - text: "Data Sets"
