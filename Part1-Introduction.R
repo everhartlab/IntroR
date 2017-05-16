@@ -8,7 +8,7 @@
 #  1. How to use this R script
 #  2. Creating objects
 #  3. Sequences and vectors
-#  4. Matrices and evaluating a matrix
+#  4. Matrices and evaluating a matrix # name?
 #  
 # Part 1: How to use this R scrpt
 # -------------------------------
@@ -46,8 +46,8 @@
 # were made nine times during the growing season.  Here are her disease severity data
 # from the experiment. 
 # 
-#  'Cutter' without fungicide: 0, 0, 0, 0, 0, 0, 0, 1.15, 3.62, 17.89
-#  'Cutter' with fungicide: 0, 0, 0, 0, 0, 0, 1.79, 2.4, 6.21
+#  'Cutter' without fungicide: 1.15, 3.62, 17.89
+#  'Cutter' with fungicide: 1.79, 2.4, 6.21
 #
 # Anne is summarizing her data and wants to know how much fungicide application was able
 # to reduce the disease severity.  She wants to know this for each day and also for the 
@@ -55,14 +55,13 @@
 # 
 # How would you accomplish this if you were using Excel or some other tool?
 #
-# R is an object-oriented language.  In other programming languages, objects 
-# 
-# 
 # 
 # This is a small data set, so let's create two vectors for this comparison.  Vectors
 # are simply a contiguous set of cells that contain data of the same type, so in 
 # this case we want to keep our data as numeric.  Let's create two vectors and assign 
 # them to be stored inside two objects, one called 'cut.fung' and 'cut.none'. 
+#
+# Here we've used the c() function to *combine* data together 
 
 cut.fung <- c(0, 0, 0, 0, 0, 0, 0, 1.15, 3.62, 17.89)
 cut.none <- c(0, 0, 0, 0, 0, 0, 1.79, 2.4, 6.21)
