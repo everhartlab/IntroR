@@ -10,7 +10,7 @@
 #  4. Basic data manipulation (renaming, subsetting, rotating)
 #  
 #  
-# Part 1: Working Directories
+# Part I: Working Directories
 # ---------------------------
 # 
 # A working directory is the folder on your computer where you are currently
@@ -98,8 +98,8 @@ str(fungicide)
 # want to answer the following questions:
 # 
 #  1. How does the size of the fungicide effect compare to the effect of
-#     resistance? 
-#  2. Would it be the same as resistance?
+#     cultivar? 
+#  2. Would it be the same as cultivar?
 #
 # To answer these questions, we will use the summary statistic, Area Under the
 # Disease Progress Curve (AUDPC). 
