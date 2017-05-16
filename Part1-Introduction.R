@@ -53,7 +53,20 @@
 # to reduce the disease severity.  She wants to know this for each day and also for the 
 # cumulative disease severity rating.  
 # 
-# This is a 
+# How would you accomplish this if you were using Excel or some other tool?
+#
+# R is an object-oriented language.  In other programming languages, objects 
+# 
+# 
+# 
+# This is a small data set, so let's create two vectors for this comparison.  Vectors
+# are simply a contiguous set of cells that contain data of the same type, so in 
+# this case we want to keep our data as numeric.  Let's create two vectors and assign 
+# them to be stored inside two objects, one called 'cut.fung' and 'cut.none'. 
+
+cut.fung <- c(0, 0, 0, 0, 0, 0, 0, 1.15, 3.62, 17.89)
+cut.none <- c(0, 0, 0, 0, 0, 0, 1.79, 2.4, 6.21)
+
 # 
 # 
 # Part 3: Sequences and vectors
