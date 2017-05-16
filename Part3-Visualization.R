@@ -137,19 +137,23 @@ fungicide.tidy
 (fungicide.plot <- fungicide.plot + geom_line(aes(color = Cultivar, lty = Experiment)))
 (fungicide.plot <- fungicide.plot + geom_point())
 (fungicide.plot <- fungicide.plot + facet_wrap(~Cultivar))
+(fungicide.plot <- fungicide.plot + facet_wrap(~Cultivar, ncol = 1))
 (fungicide.plot <- fungicide.plot + theme_bw(base_size = 16))
-(fungicide.plot <- fungicide.plot + theme(aspect.ratio = 1/2))
+(fungicide.plot <- fungicide.plot + theme(aspect.ratio = 1/3))
 (fungicide.plot <- fungicide.plot + theme(legend.position = "bottom"))
 (fungicide.plot <- fungicide.plot + theme(legend.direction = "vertical"))
+(fungicide.plot <- fungicide.plot + theme(panel.grid = element_blank()))
+(fungicide.plot <- fungicide.plot + xlab("Calendar Date (Julian)"))
+(fungicide.plot <- fungicide.plot + ylab("Disease Severity"))
 
 fungicide.plot <- ggplot(fungicide.tidy, aes(x = Julian.Date, y = Severity)) +
   geom_line(aes(lty = Experiment), size = 1) +
-  geom_point(aes(pch = Experiment)) +
   facet_wrap(~Cultivar, ncol = 1) +
   theme_bw(base_size = 16) +
   theme(aspect.ratio = 1/3) +
   theme(legend.position = "bottom") +
   theme(legend.direction = "vertical") +
+  theme(panel.grid = element_blank()) +
   xlab("Calendar Date (Julian)") +
   ylab("Disease Severity")
 fungicide.plot
