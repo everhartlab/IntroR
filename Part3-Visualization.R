@@ -118,11 +118,16 @@ is.data.frame(fungicide)
 # 17 treatment         146               JaggerWheat     5.00
 # 18 treatment         154               JaggerWheat    20.17
 # ```
-# 
-# This process will take three steps
+
+readline("Discussion: What are the differences between the two data frames above?
+         
+         Press ENTER to continue")
+
+# This process will take three steps:
 #  
 #  1. subset control and treatment data into separate data frames
 #  2. collect each record into a single row with the *tidyr* function `gather()`
+#     (This is also known as a pivot table in Excel).
 #  3. combine the two data frames and create a new column called "Experiment"
 #     with the *dplyr* function `bind_rows()`
 # 
@@ -141,6 +146,12 @@ trt.tidy <- gather(data = treatment, key = Cultivar, value = Severity, -Julian.D
 
 fungicide.tidy <- bind_rows(control = con.tidy, fungicide = trt.tidy, .id = "Experiment")
 fungicide.tidy
+
+# 
+# Visualizing Data
+# ----------------
+# 
+
 
 (fungicide.plot <- ggplot(fungicide.tidy, aes(x = Julian.Date, y = Severity)))
 (fungicide.plot <- fungicide.plot + geom_line(aes(color = Cultivar, lty = Experiment)))
