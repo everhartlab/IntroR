@@ -59,9 +59,8 @@
 
 pi*pi
 
-pi^2
+pi^2   # this does the same thing because ^ is, here, interpreted as "taken to the exponent"
 
-#
 #
 # Part 2: Creating objects
 # -------------------------
