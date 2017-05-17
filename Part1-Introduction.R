@@ -141,7 +141,16 @@ last.name <- "Everhart"
 first.name
 last.name
 
-# Using a function c() we can tell R to *combine* these two objects
+# Using a function c() we can tell R to *combine* these two objects.  This
+# function will combine values from the first object with the second object and
+# return them as a single observation.  Let's try it:
+
+c(first.name, last.name)
+
+# Notice how the names are returned inside quotation marks, which tells us that
+# these are interpreted as character data in R.
+
+
 
 # Part 3: Vectors and sequences -----------------------------
 # 
