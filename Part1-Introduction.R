@@ -90,6 +90,14 @@ c <- 3   # assign 3 to c
 
 (a+b)/c
 
+# Avoid creating object names that start with a numnber because R will look at
+# the first character and try to enterpret the entire name as a mathematical
+# term.  Try this:
+
+2foxes <- 1   
+
+# The error here tells us that something went wrong and R cannot proceed.
+#
 # If we want to assign (a+b)/c to a new object called 'answer' -- what will the
 # object contain?  Find out:
 
@@ -103,21 +111,47 @@ answer
 
 answer*2
 
+# The examples above dealt with numeric values assigned to objects.  We can also
+# store character data in objects.  Since some words and phrases can contain 
+# spaces or other punctuation, we need to place our words and phrases inside 
+# quotation marks.
+# 
+# Let's use my name for this exercise.  Let's create two objects, one for my
+# first name and the second for my last name. 
+
+, and assign our own names to 
+# those objects.  To to this, modify the following:
+
+first.name <- "Sydney"   # Place your name here inside the quotation marks
+last.name <- 'Everhart'  # Single quotes work too!
+
+# We now have those two objects.  Let's look at them.
+
+first.name
+last.name
+
+# Since we each have a first name and a family name, I want you to modify these
+# objects so that instead of my name, they contain your name. 
+
+first.name <- "Sydney"  #Replace my name with your own name
+last.name <- "Everhart"
+
+# Did this work?  Let's look at the two objects:
+
+first.name
+last.name
+
+# Using a function c() we can tell R to *combine* these two objects
+
 # Part 3: Vectors and sequences -----------------------------
 # 
-# Up to here, the objects we've created contain only a single item. You can 
-# store more than one item in an object.  However, likes to help you keep these 
-# items organized.
+# Up to here, the objects we've created only contained a single item. You can 
+# store more than one item in an object.  However, R likes to help you keep these 
+# items organized. 
 # 
 # Let's say that we have 5 fungicide concentrations that were used in an 
 # experiment: 0.5, 1.0, 1.5, 2.0, and 10.  We can store these items in an 
-# object.  Let's use a name that is short and easy to remember. Avoid creating 
-# object names that start with a numnber because R will look at the first
-# character and try to enterpret the entire name as a mathematical term.  Try
-# this:
-
-2foxes <- 1   # an error here tells us that something went wrong and R cannot proceed.
-
+# object.  Let's use a name that is short and easy to remember. 
 
 
 
