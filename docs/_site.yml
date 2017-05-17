@@ -21,7 +21,7 @@ output:
     toc_float:
       collapsed: false
     toc_depth: 2
-    theme: cosmo
+    theme: cerulean
     highlight: textmate
     include:
       after_body: footer.html
