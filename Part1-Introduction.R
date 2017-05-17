@@ -150,8 +150,6 @@ c(first.name, last.name)
 # Notice how the names are returned inside quotation marks, which tells us that
 # these are interpreted as character data in R.
 
-
-
 # Part 3: Vectors and sequences -----------------------------
 # 
 # Up to here, the objects we've created only contained a single item. You can 
