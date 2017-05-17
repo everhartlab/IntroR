@@ -13,37 +13,38 @@
 # Part 1: How to use this R scrpt
 # -------------------------------
 # 
-# A script is a text document that contains instructions and commands The #
-# symbol is used to leave comments, which R will not try to interpret as a
+# A script is a text document that contains instructions and commands The # 
+# symbol is used to leave comments, which R will not try to interpret as a 
 # command.
 # 
-# The console (below) is for submitting commands to be interpreted in R. To run
-# a command in the console, you can copy+paste it into the console and press
+# The console (below) is for submitting commands to be interpreted in R. To run 
+# a command in the console, you can copy+paste it into the console and press 
 # enter.
 # 
-# Copy and paste the following into the console and run it: 
+# Copy and paste the following into the console and run it:
 
     print("the instructor's name is Sydney")  
 
-# Run a single line of your script in the console by placing your cursor on the
-# line you want to submit and use your cursor to press the "Run" button at the
-# top right. You can also use the shortcut key strokes cmd+enter (mac) or
-# ctrl+enter (PC) to run a single line at a time.
+#Run a single line of your script in the console by placing your cursor on the 
+#line you want to submit and use your cursor to press the "Run" button at the 
+#top right. You can also use the shortcut key strokes cmd+enter (mac) or 
+#ctrl+enter (PC) to run a single line at a time.
 #
 #The two other most important keyboard shortcuts that you'll want to use are the
 #*Tab* key to auto-complete your typing at the command line and ctrl+up arrow or
 #cmd+up arrow to access the most recently typed commands.
 #
-# You can also select only part of a line to have it run on the console.  Try running
-# the following command without copy+paste:   print("my name is _____") 
+#You can also select only part of a line to have it run on the console.  Try
+#running the following command without copy+paste:   print("my name is _____")
 #
-# R can also be used to perform calculations, such as the following:
+#R can also be used to perform calculations, such as the following:
 
 5+1/3
 
 # What rules does R apply for the order of operations and how do you find out?
-#
-# Let's modify the statement above to see if adding parentheses changes the result:
+# 
+# Let's modify the statement above to see if adding parentheses changes the
+# result:
 
 (5+1)/3
 
@@ -61,17 +62,18 @@ pi*pi
 
 pi^2   # this does the same thing because ^ is, here, interpreted as "taken to the exponent"
 
-#
-# Part 2: Creating objects
-# -------------------------
-#
-# Objects are like shortcuts.  They are a way to store data without having to
-# re-type them.  By virtue, objects are only created once something has been
-# assigned to them.  Let's repeat our simple math calculation above, this time
-# using objects. It we want to calculate (5+1)/3 using objects, it needs to look
-# like this: (a+b)/c The objects a, b, and c do not exist yet, so we need to
-# assign values to them in order to create them. R interprets the less than
-# symbol and dash as "assign".  So we need to do the following:
+# 
+# Part 2: Creating objects -------------------------
+# 
+# Objects are like shortcuts.  They are a way to store data without having to 
+# re-type them.  By virtue, objects are only created once something has been 
+# assigned to them.  Anything can be stored in an object, including figures!
+
+# Let's repeat our simple math calculation above, this time using objects. It we
+# want to calculate (5+1)/3 using objects, it needs to look like this: (a+b)/c
+# The objects a, b, and c do not exist yet, so we need to assign values to them
+# in order to create them. R interprets the less than symbol and dash as
+# "assign".  So we need to do the following:
 
 a <- 5   # assign the number 5 to a
 b <- 1   # assign number 1 to b
@@ -97,43 +99,64 @@ answer <- (a+b)/c
 
 answer
 
-# Part 3: Sequences and vectors
-# -----------------------------
+# What would you get if you multiplied answer by 2?
 
-# It is easier to understand objects if we are working on a real problem.  The PI in your lab group wants you to 
+answer*2
 
-Let's
-# say we have a new fungicide for control of wheat stipe rust.  We want to
-# determine the amount of fungicide needed to control disease, first conducted
-# in a greenhouse experiment. the fungicide in a greenhouse experiment
-
-
-#We have
-# obtained data from an experiment that was designed to assess the best method for 
-# control of stripe rust disease. Fungicides can be used help reduce disease. 
+# Part 3: Vectors and sequences -----------------------------
 # 
-# Anne was the scientist performing this experiment had field plots in a single location.
-# She rated stripe rust disease severity on the wheat cultivar 'Cutter' that was either 
-# treated with fungicide or *not* treated with fungicide. Her ratings for disease
-# were made nine times during the growing season.  Here are her disease severity data
-# from the experiment. 
+# Up to here, the objects we've created contain only a single item. You can 
+# store more than one item in an object.  However, likes to help you keep these 
+# items organized.
 # 
-#  'Cutter' without fungicide: 1.15, 3.62, 17.89
-#  'Cutter' with fungicide: 1.79, 2.4, 6.21
+# Let's say that we have 5 fungicide concentrations that were used in an 
+# experiment: 0.5, 1.0, 1.5, 2.0, and 10.  We can store these items in an 
+# object.  Let's use a name that is short and easy to remember. Avoid creating 
+# object names that start with a numnber because R will look at the first
+# character and try to enterpret the entire name as a mathematical term.  Try
+# this:
+
+2foxes <- 1   # an error here tells us that something went wrong and R cannot proceed.
+
+
+
+
+
+# It is easier to understand objects if we are working on a real problem.  The
+# PI in your lab group wants you to
+
+#Let's say we have a new fungicide for control of wheat stipe rust.  We want to 
+#determine the amount of fungicide needed to control disease, first conducted in
+#a greenhouse experiment. the fungicide in a greenhouse experiment
+
+
+#We have obtained data from an experiment that was designed to assess the best
+#method for control of stripe rust disease. Fungicides can be used help reduce
+#disease.
 #
-# Anne is summarizing her data and wants to know how much fungicide application was able
-# to reduce the disease severity.  She wants to know this for each day and also for the 
-# cumulative disease severity rating.  
-# 
-# How would you accomplish this if you were using Excel or some other tool?
+#Anne was the scientist performing this experiment had field plots in a single
+#location. She rated stripe rust disease severity on the wheat cultivar 'Cutter'
+#that was either treated with fungicide or *not* treated with fungicide. Her
+#ratings for disease were made nine times during the growing season.  Here are
+#her disease severity data from the experiment.
 #
-# 
-# This is a small data set, so let's create two vectors for this comparison.  Vectors
-# are simply a contiguous set of cells that contain data of the same type, so in 
-# this case we want to keep our data as numeric.  Let's create two vectors and assign 
-# them to be stored inside two objects, one called 'cut.fung' and 'cut.none'. 
+#'Cutter' without fungicide: 1.15, 3.62, 17.89 'Cutter' with fungicide: 1.79,
+#2.4, 6.21
 #
-# Here we've used the c() function to *combine* data together 
+#Anne is summarizing her data and wants to know how much fungicide application
+#was able to reduce the disease severity.  She wants to know this for each day
+#and also for the cumulative disease severity rating.
+#
+#How would you accomplish this if you were using Excel or some other tool?
+#
+#
+#This is a small data set, so let's create two vectors for this comparison. 
+#Vectors are simply a contiguous set of cells that contain data of the same
+#type, so in this case we want to keep our data as numeric.  Let's create two
+#vectors and assign them to be stored inside two objects, one called 'cut.fung'
+#and 'cut.none'.
+#
+#Here we've used the c() function to *combine* data together
 
 cut.fung <- c(0, 0, 0, 0, 0, 0, 0, 1.15, 3.62, 17.89)
 cut.none <- c(0, 0, 0, 0, 0, 0, 1.79, 2.4, 6.21)
