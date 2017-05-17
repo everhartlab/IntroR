@@ -13,7 +13,7 @@ docs/index.Rmd : README.md
 docs/data.Rmd : data/README.md
 	cat docs/data.txt $< > $@
 
-%.html : %.Rmd
+%.html : %.Rmd docs/footer.html docs/_site.yml
 	R --slave -e "rmarkdown::render_site('$<')"
 
 .PHONY : clean

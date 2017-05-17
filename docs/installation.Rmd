@@ -57,7 +57,7 @@ Our [workshop materials] is a zip file that contains a folder called
 ├── Makefile
 ├── Part1-Introduction.R
 ├── Part2-Analysis.R
-├── Part3-Plotting.R
+├── Part3-Visualization.R
 ├── README.md
 ├── data/
 │   ├── FungicideExample.csv
