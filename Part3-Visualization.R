@@ -142,9 +142,10 @@ readline("Discussion: What are the differences between the two data frames above
 # 
 # Subset control and treatmend data into separate data frames. Since we have a
 # data frame, we will use matrix-like subsetting.
+
 control   <- fungicide[, c(1, 2, 4, 6)]
 treatment <- fungicide[, c(1, 3, 5, 7)]
-# 
+
 # Now we have two separate data frames with 4 columns each, but still we have
 # three observations per row. 
 
