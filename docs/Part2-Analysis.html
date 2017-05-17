@@ -321,6 +321,9 @@ div.tocify {
 <li>
   <a href="quiz.html">Quizzes</a>
 </li>
+<li>
+  <a href="refs.html">Other References</a>
+</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         
@@ -356,7 +359,7 @@ div.tocify {
 <pre class="r"><code>&gt; list.files(&quot;.&quot;)</code></pre>
 <pre><code>[1] &quot;data&quot;                  &quot;docs&quot;                  &quot;IntroR.Rproj&quot;         
 [4] &quot;LICENSE&quot;               &quot;Makefile&quot;              &quot;Part2-Analysis.R&quot;     
-[7] &quot;Part3-Visualization.R&quot; &quot;README.md&quot;             &quot;results&quot;              </code></pre>
+[7] &quot;Part3-Visualization.R&quot; &quot;README.md&quot;            </code></pre>
 <p>You can see that the first entry in here is “data”. This is where we’ve placed the fungicide example data.</p>
 <pre class="r"><code>&gt; list.files(&quot;data&quot;)</code></pre>
 <pre><code>[1] &quot;FungicideExample.csv&quot; &quot;FungicideTidy.csv&quot;    &quot;README.md&quot;           </code></pre>
@@ -520,9 +523,8 @@ JaggerWheat.Trt               20.17</code></pre>
 Cutter 0.01872982 0.009714035
 Jagger 0.04463333 0.023521053</code></pre>
 <p>We can save the matrix using <code>write.table()</code></p>
-<pre class="r"><code>&gt; dir.create(&quot;results&quot;)</code></pre>
-<pre><code>Warning in dir.create(&quot;results&quot;): &#39;results&#39; already exists</code></pre>
-<pre class="r"><code>&gt; write.table(fungicide.res, file = &quot;results/audpc.csv&quot;, sep = &quot;,&quot;, 
+<pre class="r"><code>&gt; dir.create(&quot;results&quot;)
+&gt; write.table(fungicide.res, file = &quot;results/audpc.csv&quot;, sep = &quot;,&quot;, 
 +             col.names = NA,
 +             row.names = TRUE)</code></pre>
 </div>
