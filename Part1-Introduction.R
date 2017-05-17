@@ -97,6 +97,8 @@ answer <- (a+b)/c
 
 answer
 
+# Part 3: Sequences and vectors
+# -----------------------------
 
 # It is easier to understand objects if we are working on a real problem.  The PI in your lab group wants you to 
 
@@ -138,8 +140,7 @@ cut.none <- c(0, 0, 0, 0, 0, 0, 1.79, 2.4, 6.21)
 
 # 
 # 
-# Part 3: Sequences and vectors
-# -----------------------------
+
 # 
 # Part 4: Matricies and evaluating a matrix
 # -----------------------------------------
