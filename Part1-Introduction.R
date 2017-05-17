@@ -41,16 +41,64 @@
 
 5+1/3
 
-# What rules does R apply for the order of operations?
+# What rules does R apply for the order of operations and how do you find out?
+#
+# Let's modify the statement above to see if adding parentheses changes the result:
 
+(5+1)/3
 
+# Does it matter if there are spaces added into this?
+#
+ ( 5 + 1 ) / 3
 
+# That shows us that the spaces did not matter for the calculation.
+#
+# R also has some pre-defined matematical terms that you can use, such as pi.
+#
+# What is pi times pi ?
+
+pi*pi
+
+pi^2
 
 #
 #
 # Part 2: Creating objects
 # -------------------------
 #
+# Objects are like shortcuts.  They are a way to store data without having to
+# re-type them.  By virtue, objects are only created once something has been
+# assigned to them.  Let's repeat our simple math calculation above, this time
+# using objects. It we want to calculate (5+1)/3 using objects, it needs to look
+# like this: (a+b)/c The objects a, b, and c do not exist yet, so we need to
+# assign values to them in order to create them. R interprets the less than
+# symbol and dash as "assign".  So we need to do the following:
+
+a <- 5   # assign the number 5 to a
+b <- 1   # assign number 1 to b
+c <- 3   # assign 3 to c
+
+# As you are assigning these numbers to objects, they appear in your environment
+# (top right).  These objects are not being saved to a hard drive, they are
+# stored in memory of your computer only.
+#
+# **DANGER** if you assign something to an object that already exists, R will do
+# what you tell it and overwrite that obect with the new assignment.
+#
+# Now we can execute our calculation using objects instead of numbers.  Try it!
+
+(a+b)/c
+
+# If we want to assign (a+b)/c to a new object called 'answer' -- what will the
+# object contain?  Find out:
+
+answer <- (a+b)/c
+
+# Take a look at the object 'answer' by typing the name into the command line:
+
+answer
+
+
 # It is easier to understand objects if we are working on a real problem.  The PI in your lab group wants you to 
 
 Let's
