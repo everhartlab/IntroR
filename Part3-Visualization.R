@@ -120,10 +120,10 @@ is.data.frame(fungicide)
 # 18 treatment         154               JaggerWheat    20.17
 # ```
 
-readline("Discussion: What are the differences between the two data frames above?
-         How can we get from one data frame to the other?
-         
-         Press ENTER to continue")
+stop("
+      Discussion: What are the differences between the two data frames above?
+      How can we get from one data frame to the other?
+    ")
 
 # 
 # There are several ways of creating the tidy data frame; we will show one here,
@@ -149,8 +149,9 @@ treatment <- fungicide[, c(1, 3, 5, 7)]
 # Now we have two separate data frames with 4 columns each, but still we have
 # three observations per row. 
 
-readline("Would this approach work for a different data set? Why or why not?
-         Press ENTER to continue")
+stop("
+      Would this approach work for a different data set? Why or why not?
+     ")
 
 # ### Step 2: Tidy data
 # 
@@ -169,12 +170,11 @@ readline("Would this approach work for a different data set? Why or why not?
 # in the help page for `gather()`.
 # 
 
-readline("
-         Look at the examples for gather and determine what the names of the
-         key and value columns should be for our data.
-         (hint: you can use example(gather) to run them automatically).
-
-         Press ENTER to continue")
+stop("
+      Look at the examples for gather and determine what the names of the
+      key and value columns should be for our data.
+      (hint: you can use example(gather) to run them automatically).
+    ")
 
 #
 #
@@ -247,11 +247,11 @@ write_csv(fungicide.tidy, path = "data/FungicideTidy.csv")
 # Visualizing Data
 # ----------------
 # 
-readline("
-         What visualization might be appropriate for these data?
-         What should be on the axes?
-         Should we use lines, points, bars, boxplots, etc?
-         ")
+stop("
+      What visualization might be appropriate for these data?
+      What should be on the axes?
+      Should we use lines, points, bars, boxplots, etc?
+    ")
 #
 # If you haven't taken the time to address the questions above, do so now. 
 # 
@@ -412,7 +412,6 @@ fungicide.plot
 # 
 
 stop("
-
       Look at ?theme and figure out one of the following:
       1. change the aspect ratio of the panels
       2. remove the background grid in the panels

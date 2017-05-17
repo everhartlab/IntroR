@@ -50,15 +50,15 @@ list.files("data")
 # figuring out how you can use a function is to look at it's help page. The way
 # you can do that is by typing either help("function_name") or ?function_name.
 
-readline("
+stop("
 
-Type ?read.table and answer these three questions:
+     Type ?read.table and answer these three questions:
      
      1. What does it do? (Description)
      2. What are the first three arguments and their defaults? (Usage/Arguments)
      3. What does it return? (Value)
      
-     hit ENTER to continue ")
+     ")
 
 # 
 # In order to read our data into R, we will need to provide three things:
@@ -107,17 +107,18 @@ str(fungicide)
 # So, how do you calculate this? You could code the trapezoid rule yourself, OR
 # you could find a package that was designed for this. 
 
-readline("
+stop("
 
-Do an internet search for AUDPC in R. What did you find?
+    Do an internet search for AUDPC in R. What did you find?
 
-         hit ENTER to continue. ")
+    ")
 
 # The first thing that likely popped up was the function `audpc()` in the
 # *agricolae* package. If we want to use it, we can download the package to our
 # computer with the function `install.packages()`. This will install a package
 # from CRAN and place it into your R *Library*. Where is your R library? Type
 # `.libPaths()` to find out!
+#+ eval = FALSE
 
 .libPaths()
 
@@ -134,6 +135,7 @@ install.packages("agricolae", repos = "https://cran.rstudio.com")
 library("agricolae")
 
 # Now we can look up help for `audpc()`
+#+ eval = FALSE
 
 ?audpc
 
@@ -152,7 +154,11 @@ fungicide.audpc <- audpc(evaluation = fungicide[, -1], dates = jdate, type = "re
 # what happens. Check the evaluaton data relative to the dates and see how it's
 # relevant.
 
-readline("Stop and look at the examples from ?audpc. Press ENTER when done ")
+stop("
+
+     Stop and look at the examples from ?audpc.
+     
+     ")
 
 # We can see from example 3, that the data must be arranged where dates are in
 # separate columns. We need to transpose our data. To do this, we can use the
