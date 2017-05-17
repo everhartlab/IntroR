@@ -117,12 +117,9 @@ answer*2
 # quotation marks.
 # 
 # Let's use my name for this exercise.  Let's create two objects, one for my
-# first name and the second for my last name. 
+# first name and another for my last name.  
 
-, and assign our own names to 
-# those objects.  To to this, modify the following:
-
-first.name <- "Sydney"   # Place your name here inside the quotation marks
+first.name <- "Sydney"
 last.name <- 'Everhart'  # Single quotes work too!
 
 # We now have those two objects.  Let's look at them.
