@@ -145,17 +145,74 @@ last.name
 c(first.name, last.name)
 
 # Notice how the names are returned inside quotation marks, which tells us that
-# these are interpreted as character data in R.
+# these are interpreted as character data in R. You'll also notice that each
+# name is placed inside quotes and that's because c() combined names into a
+# single vector that contains two items, your first and your last name.  This
+# brings us to the next part in our introduction, vectors.
+#
 
 # Part 3: Vectors and sequences -----------------------------
 # 
 # Up to here, the objects we've created only contained a single item. You can 
-# store more than one item in an object.  However, R likes to help you keep these 
-# items organized. 
+# store more than one item in an object.  However, R likes to help you keep 
+# these items organized.
 # 
+# Let's create an object that is a vector of our first and last names using the
+# two objects that we created previously.
+# 
+# *Avoid re-typing your commands.* Since the last command that we ran contained 
+# what we want, we can simply use the up arrow to access the most recently 
+# submitted command and modify it. You can also access the *History* tab in the 
+# top right panel of RStudio or, at the command line, access a list of the most 
+# recent commands using the cmd + up arrow OR the ctrl + up arrow.
+
+name <- c(first.name, last.name)
+
+# We can inspect this object by typing *name* at the command line. We can
+# inspect the structure of this object using the function str() on name.
+
+str(name)
+
+# This shows us that this is a vector because the items in it are ordered from 1
+# to 2 as shown by the [1:2]. This also tells us that this list is a *character*
+# list, which is indicated by the *chr* label. We also see the two items in this
+# vector, which is your first and last name.
+#
+# What is the length of your name?  We can find out using the function lenght()
+
+length(name)
+
+# Let's compare this to a vector that contains only numeric data. For this
+# example, let's use today's date represented in numbers for the month (05), day
+# (18), and year (2017).  
+
+today <- c(05, 18, 2017)
+
+# Inspect this object by typing the name *today* at the command line. You'll see
+# that R has eliminated the zero that preceeds the 5 and has kept the order we
+# provided for these items in the vector.  Let's take a look at the structure of today.
+
+str(today)
+
+# You'll notice that the vector has three items [1:3] and it contains only 
+# numeric data.
+# 
+# Let's re-code the date using names for the month and see how that changes our
+# vector.
+
+today <- c("May", 18, 2017)
+
+str(today)
+
+# Notice how R is trying to keep our list organized.  Rather than coding this
+# vector as containing numbers and characters, it has decided that because it
+# can't call everything in our vector a number that it will call everything
+# characters.
+# 
+
 # Let's say that we have 5 fungicide concentrations that were used in an 
 # experiment: 0.5, 1.0, 1.5, 2.0, and 10.  We can store these items in an 
-# object.  Let's use a name that is short and easy to remember. 
+# object.  Let's use a name that is short and easy to remember.
 
 
 
