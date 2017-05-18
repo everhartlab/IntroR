@@ -204,10 +204,10 @@ today <- c("May", 18, 2017)
 
 str(today)
 
-# Notice how R is trying to keep our list organized.  Rather than coding this
-# vector as containing numbers and characters, it has decided that because it
-# can't call everything in our vector a number that it will call everything
-# characters.
+# Notice how R is trying to keep our data organized according to type.  Rather
+# than coding this vector as containing numbers and characters, it has decided
+# that because it can't call everything in our vector a number that it will call
+# everything characters. This process is called *coercion*.
 # 
 
 # Let's say that we have 5 fungicide concentrations that were used in an 
