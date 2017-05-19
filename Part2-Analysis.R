@@ -147,7 +147,6 @@ jdate <- fungicide$Julian.Date # this is also the first column
 jdate
 fungicide.audpc <- audpc(evaluation = fungicide[, -1], dates = jdate, type = "relative")
 
-#
 # Well this doesn't look good. What can this error message mean? Let's take a 
 # look at the audpc help page one more time; this time, we'll look at the
 # Examples section. Try to copy and paste the code one line at a time and see
@@ -171,19 +170,33 @@ t(fungicide[, -1])
 fungicide.audpc <- audpc(evaluation = t(fungicide[, -1]), dates = jdate, type = "relative")
 fungicide.audpc
 
-# This gives us a vector with the AUDPC values per treatment, but if we wanted
-# to present this as a table in a paper, we would need to export it to a csv 
-# file. To do this, we can make this into a matrix by using the `matrix()` 
-# functon, using the AUDPC data as input to fill a 3 x 2 matrix with each
-# cultivar, control first and then treatment.
+# This gives us a vector with the AUDPC values per treatment. The vector format 
+# does not make it particularly easy to compare the effect of cultivar or
+# treatment. A better format to store these data would be in a table. Since all
+# the values are numeric, we can place them into a matrix using the `matrix()`
+# function. We are going to put the samples in rows and experiments in columns.
 
 fungicide.res <- matrix(fungicide.audpc, nrow = 3, ncol = 2, byrow = TRUE)
 fungicide.res
+
+# We have our result, but there are no labels for the rows and columns. Notice
+# how we selected `byrow = TRUE`. This means that the matrix was filled row by 
+# row. So the first two elements of the vector would go in the first row, the
+# next two would go in the second, and so on and so forth.
+
+names(fungicide.audpc)[1:2]
+names(fungicide.audpc)[3:4]
+names(fungicide.audpc)[5:6]
+ 
+# Since this is a small matrix, we can easily name these rows and columns
+# ourselves using the `rownames()` and `colnames()` functions.
+
 rownames(fungicide.res) <- c("2137", "Cutter", "Jagger")
 colnames(fungicide.res) <- c("Control", "Treated")
 fungicide.res
 
-# We can save the matrix using `write.table()`
+# If we wanted to use these data as a table in a paper, we should export it to a
+# csv file. We do this using the function `write.table()`
 
 dir.create("results")
 write.table(fungicide.res, file = "results/audpc.csv", sep = ",", 

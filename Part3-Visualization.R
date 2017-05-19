@@ -349,10 +349,20 @@ fungicide.plot
 # for analysis because it can allow you to see if there are any strange patterns
 # or spurious correlations in your variables. 
 # 
+# 
+# ### Question
+# 
+# Now we can address the questions from Sparks et al. (2008):
+# 
+#  1. How does the size of the fungicide effect compare to the effect of
+#     resistance? Would it be the same as resistance?
+#  2. Since the fungicide typically is only active for two weeks after
+#     application, after looking at your graph, when do you think the fungicide 
+#     was applied?
+#     
 # Of course, this plot is not quite publication ready. For one thing, it's a bit
 # too crowded and would cost a small fortune to include a color figure in a
 # journal. We need to add some customization.
-# 
 # 
 # 
 # Preparing a publication-ready plot
