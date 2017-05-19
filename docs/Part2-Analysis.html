@@ -371,11 +371,10 @@ div.tocify {
 <pre class="r"><code>&gt; list.files(&quot;.&quot;)</code></pre>
 <pre><code>[1] &quot;data&quot;                  &quot;docs&quot;                  &quot;IntroR.Rproj&quot;         
 [4] &quot;LICENSE&quot;               &quot;Makefile&quot;              &quot;Part2-Analysis.R&quot;     
-[7] &quot;Part3-Visualization.R&quot; &quot;README.md&quot;             &quot;results&quot;              </code></pre>
+[7] &quot;Part3-Visualization.R&quot; &quot;README.md&quot;            </code></pre>
 <p>You can see that the first entry in here is “data”. This is where we’ve placed the fungicide example data.</p>
 <pre class="r"><code>&gt; list.files(&quot;data&quot;)</code></pre>
 <pre><code>[1] &quot;FungicideExample.csv&quot; &quot;FungicideTidy.csv&quot;    &quot;README.md&quot;           </code></pre>
-<pre class="r"><code>&gt; #</code></pre>
 </div>
 <div id="part-ii-reading-in-data" class="section level2">
 <h2>Part II: Reading in Data</h2>
@@ -444,7 +443,6 @@ div.tocify {
  $ CutterWheat.Trt              : num  0 0 0 0 0 0 1.79 2.4 6.21
  $ JaggerWheat                  : num  0 0 0 0 0 ...
  $ JaggerWheat.Trt              : num  0 0 0 0 0 ...</code></pre>
-<pre class="r"><code>&gt; #</code></pre>
 </div>
 <div id="part-iii-finding-the-right-tool-for-the-job" class="section level2">
 <h2>Part III: Finding the right tool for the job</h2>
@@ -542,9 +540,8 @@ JaggerWheat.Trt               20.17</code></pre>
 Cutter 0.01872982 0.009714035
 Jagger 0.04463333 0.023521053</code></pre>
 <p>If we wanted to use these data as a table in a paper, we should export it to a csv file. We do this using the function <code>write.table()</code></p>
-<pre class="r"><code>&gt; dir.create(&quot;results&quot;)</code></pre>
-<pre><code>Warning in dir.create(&quot;results&quot;): &#39;results&#39; already exists</code></pre>
-<pre class="r"><code>&gt; write.table(fungicide.res, file = &quot;results/audpc.csv&quot;, sep = &quot;,&quot;, 
+<pre class="r"><code>&gt; dir.create(&quot;results&quot;)
+&gt; write.table(fungicide.res, file = &quot;results/audpc.csv&quot;, sep = &quot;,&quot;, 
 +             col.names = NA,
 +             row.names = TRUE)</code></pre>
 </div>

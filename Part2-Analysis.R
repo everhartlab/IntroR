@@ -36,7 +36,6 @@ list.files(".")
 
 list.files("data")
 
-#
 # Part II: Reading in Data
 # ------------------------
 # 
@@ -60,7 +59,7 @@ stop("
      
      ")
 
-# 
+
 # In order to read our data into R, we will need to provide three things:
 # 
 #  1. The path to the data set                 : data/FungicideExample.csv
@@ -85,7 +84,7 @@ fungicide
 
 str(fungicide)
 
-#
+
 # Part III: Finding the right tool for the job
 # --------------------------------------------
 # 

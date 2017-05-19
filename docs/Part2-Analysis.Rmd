@@ -48,8 +48,6 @@ the fungicide example data.
 
 ```{r }
 list.files("data")
-
-#
 ```
 
 Part II: Reading in Data
@@ -76,7 +74,6 @@ stop("
      
      ")
 ```
-
 
 In order to read our data into R, we will need to provide three things:
 
@@ -110,8 +107,6 @@ columns.
 
 ```{r }
 str(fungicide)
-
-#
 ```
 
 Part III: Finding the right tool for the job
