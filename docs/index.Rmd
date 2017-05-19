@@ -33,6 +33,24 @@ As a result of taking this workshop you should be able to:
 
 ## Website
 
+This website is meant to serve as a companion to the workshop. The pages located
+in the **Workshop** tab are rendered versions of R scripts located in the top 
+level of https://github.com/everhartlab/IntroR. As the workshop is designed to
+be interactive where the participants are given some control over what direction
+we should take the analyses, the scripts here are only to serve as guidelines.
+
+These scripts follow these conventions:
+
+ - R code is presented how it would appear in the R console with the first line
+   prefixed with `>` and subsequent lines prefixed with `+`. The intent is to
+   encourage the user to type the commands instead of copy and paste.
+ - There will be instances where the command is a `stop()` command. These are
+   points in the workshop where we stop the participants and ask them to talk 
+   amongst themselves, take a short survey, or find information using R's help
+   function.
+
+
+
 The website located at http://everhartlab.github.io/IntroR can be build via the
 `make` program:
 
