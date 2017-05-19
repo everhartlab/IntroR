@@ -154,11 +154,9 @@ c(first.name, last.name)
 # Part 3: Vectors and sequences -----------------------------
 # 
 # Up to here, the objects we've created only contained a single item. You can 
-# store more than one item in an object.  However, R likes to help you keep 
-# these items organized.
-# 
-# Let's create an object that is a vector of our first and last names using the
-# two objects that we created previously.
+# store more than one item in a 1-dimensional object of unlimited length. Let's
+# create an object that is a vector of our first and last names using the two
+# objects that we created previously.
 # 
 # *Avoid re-typing your commands.* Since the last command that we ran contained 
 # what we want, we can simply use the up arrow to access the most recently 
@@ -197,18 +195,30 @@ str(today)
 # You'll notice that the vector has three items [1:3] and it contains only 
 # numeric data.
 # 
-# Let's re-code the date using names for the month and see how that changes our
-# vector.
+# Let's do the same thing using names for the month and see how that changes our
+# vector. 
 
-today <- c("May", 18, 2017)
+c("May", 18, 2017)   
 
-str(today)
+# In this case we didn't re-cast the object named today. To inspect the 
+# structure of this vector, we can wrap the statement within the str() function,
+# as shown below.  Don't forget to use the up-arrow to access the last like that
+# you ran!
+
+str(c("May", 18, 2017))
 
 # Notice how R is trying to keep our data organized according to type.  Rather
 # than coding this vector as containing numbers and characters, it has decided
 # that because it can't call everything in our vector a number that it will call
 # everything characters. This process is called *coercion*.
-# 
+#
+# Let's say we wanted to 
+
+
+
+
+
+
 
 # Let's say that we have 5 fungicide concentrations that were used in an 
 # experiment: 0.5, 1.0, 1.5, 2.0, and 10.  We can store these items in an 
