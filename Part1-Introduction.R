@@ -212,7 +212,7 @@ str(c("May", 18, 2017))
 # that because it can't call everything in our vector a number that it will call
 # everything characters. This process is called *coercion*.
 #
-# Let's say we wanted to 
+# Let's say we wanted 
 
 
 
