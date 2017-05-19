@@ -4,7 +4,25 @@ title: "References"
 
 # Packages
 
-Interactive introduction to R using *swirl* so you can learn R, using R.
-Download from CRAN: https://cran.r-project.org/web/packages/swirl/index.html
-Swirl website: http://swirlstats.com/
+ - [swirl] Interactive introduction to R so you can learn R, using R.
+ - [tidyverse] Core package to load packages dedicated to working with tidy
+   data frames.
+   
+# Resources
 
+ - [R style guide] to make sure your code is beautiful because when your code is
+   easy to read, your future self will thank you.
+ - [UNL Statistics Help Desk] Statistical Cross-disciplinary Collaboration and Consulting Lab (SC3L)
+ - [CRAN task views] Grouping notable packages in specific topics such as
+   Phylogenetics, Time Series, Experimental Design, etc.
+ - [Happy Git and GitHub for the useR] a long-form tutorial on working
+   reproducibly in R and RStudio with Git and GitHub
+ - [Sampling, Data Management and Visualization] UNL Course lead by Dr. Drew Tyre
+ 
+[Happy Git and GitHub for the useR ]: http://happygitwithr.com/
+[swirl]: http://swirlstats.com/
+[tidyverse]: http://tidyverse.org/
+[CRAN task views]: https://cran.r-project.org/web/views/
+[UNL Statistics Help Desk]: http://statistics.unl.edu/help-desk-form
+[Sampling, Data Management and Visualization]: https://atyre2.github.io/data-management/ 
+[R style guide]: http://style.tidyverse.org/

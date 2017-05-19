@@ -21,10 +21,14 @@ navbar:
           href: data.html
         - text: "About This Site"
           href: about.html
-    - text: "Quizzes"
-      href: quiz.html
-    - text: "Other References"
-      href: refs.html
+    - text: "Links"
+      menu:
+        - text: "Workshop Quizzes"
+          href: quiz.html
+        - text: "Exit Survey"
+          href: coming-soon.html
+        - text: "Useful Tools/Links/References"
+          href: refs.html
 output:
   html_document:
     toc: true
