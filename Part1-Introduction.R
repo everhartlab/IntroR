@@ -498,7 +498,7 @@ wkday
 
 # Now we are ready to bind this vector to our data frame. We can use cbind()
 
-cbind(spring,wkday)
+cbind(spring, wkday)
 
 # Success!  Now you just need to recast the object spring with this version:
 
