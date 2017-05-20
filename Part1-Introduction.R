@@ -8,7 +8,8 @@
 #  1. How to use this script and R
 #  2. Creating objects
 #  3. Sequences and vectors (1-D)
-#  4. Matrices and dataframes (2-D)
+#  4. Matrices and evaluating a matrix (2-D)
+#  5. Data frames
 #  
 # Part 1: How to use this R scrpt
 # -------------------------------
@@ -63,7 +64,8 @@ pi*pi
 pi^2   # this does the same thing because ^ is, here, interpreted as "taken to the exponent"
 
 # 
-# Part 2: Creating objects -------------------------
+# Part 2: Creating objects 
+# -------------------------
 # 
 # Objects are like shortcuts.  They are a way to store data without having to 
 # re-type them.  By virtue, objects are only created once something has been 
@@ -151,7 +153,8 @@ c(first.name, last.name)
 # brings us to the next part in our introduction, vectors.
 #
 
-# Part 3: Vectors and sequences -----------------------------
+# Part 3: Vectors and sequences 
+#------------------------------
 # 
 # Up to here, the objects we've created only contained a single item. You can 
 # store more than one item in a 1-dimensional object of unlimited length. Let's
@@ -252,6 +255,14 @@ month <- rep(5, 31)
 
 length(month)
 
+# There are 31 items in this list and we can inspect individual items in the
+# list based on their ordered position in the list using square brackets:
+
+day[24]  # the number inside the bracked corresponds to location of item in list, not value
+
+# In this case, the 24th item in day is 24, which confirms that we created this
+# correctly. 
+
 # We can modify the object year to contain 31 repeats of 2017, however, this 
 # time, let's get creative and, instead of specifying you want 2017 repeated 31
 # times, use the length() on the object *day* to specify the number of times we
@@ -273,6 +284,8 @@ str(day)
 str(month)
 str(year)
 
+# Part 4: Matricies and evaluating a matrix
+# -----------------------------------------
 # Because these are all numeric vectors and of equal length, we can combine them
 # into a matrix, which is a table that contains only numbers. First, here's a
 # quick reminder of what we want this to look:
@@ -296,57 +309,81 @@ cbind(day, month, year)
 
 May <- cbind(day, month, year)
 
+# Let's inspect this new object in the same way as vectors:
 
-# Let's say that we have 5 fungicide concentrations that were used in an 
-# experiment: 0.5, 1.0, 1.5, 2.0, and 10.  We can store these items in an 
-# object.  Let's use a name that is short and easy to remember.
+May
+length(May)
 
+# Using the length() function, we see it says 93.  This represents the total
+# length of all three columns. Let's check the math:
 
+length(May)/3
 
+# Because this is a 2-dimensional object, we can inspect the dimensions using the dim() function:
 
-# It is easier to understand objects if we are working on a real problem.  The
-# PI in your lab group wants you to
+dim(May)
 
-#Let's say we have a new fungicide for control of wheat stipe rust.  We want to 
-#determine the amount of fungicide needed to control disease, first conducted in
-#a greenhouse experiment. the fungicide in a greenhouse experiment
+# Because this object is rather large, we didn't get to see the top rows of the
+# obect.  A quick way to look at the top of the file is with the head() function
+# and if we wanted to look at the bottom, we would use tail(). 
 
+head(may)  #if this didn't work, double-check that you spelled the object name correctly
 
-#We have obtained data from an experiment that was designed to assess the best
-#method for control of stripe rust disease. Fungicides can be used help reduce
-#disease.
-#
-#Anne was the scientist performing this experiment had field plots in a single
-#location. She rated stripe rust disease severity on the wheat cultivar 'Cutter'
-#that was either treated with fungicide or *not* treated with fungicide. Her
-#ratings for disease were made nine times during the growing season.  Here are
-#her disease severity data from the experiment.
-#
-#'Cutter' without fungicide: 1.15, 3.62, 17.89 'Cutter' with fungicide: 1.79,
-#2.4, 6.21
-#
-#Anne is summarizing her data and wants to know how much fungicide application
-#was able to reduce the disease severity.  She wants to know this for each day
-#and also for the cumulative disease severity rating.
-#
-#How would you accomplish this if you were using Excel or some other tool?
-#
-#
-#This is a small data set, so let's create two vectors for this comparison. 
-#Vectors are simply a contiguous set of cells that contain data of the same
-#type, so in this case we want to keep our data as numeric.  Let's create two
-#vectors and assign them to be stored inside two objects, one called 'cut.fung'
-#and 'cut.none'.
-#
-#Here we've used the c() function to *combine* data together
+# Notice how the columns have the names we used for each of the vectors, day, 
+# month, and year. Each row is labeled with one number followed by a comma 
+# inside square brackets. These are analagous to X and Y Cartesian coordinates. 
+# You can access each entry within the dimensions of your object. We can use
+# them to access an individual line in the matrix. Let's look at the row that
+# contains today's date:
 
-cut.fung <- c(0, 0, 0, 0, 0, 0, 0, 1.15, 3.62, 17.89)
-cut.none <- c(0, 0, 0, 0, 0, 0, 1.79, 2.4, 6.21)
+May[24, ]
 
+# You can also use this to access just one column of the matrix.  Let's look at month:
+
+May[,2]
+
+# Now that we've inspected the object May, let's create the same thing for June.
+# How should we do this?
 # 
-# 
+# One option would be to create new obects for day, month, and year and combine
+# them just like we did for May.  What is the simplest method to do this, using
+# the fewest number of steps?
 
-# 
-# Part 4: Matricies and evaluating a matrix
-# -----------------------------------------
-# 
+June <- May[1:30,]  # Created new object called June that used rows 1:30
+
+# Inspect what we have now:
+
+head(June)
+tail(June)
+dim(June)
+
+# We need to change the month column so that it says 6 instead of 5, how can we
+# do this?  Let's just look at the column first:
+
+June[,2]
+
+# We need to add 1 to each of these values, so let's try that!
+
+June[,2]+1
+
+# This worked, so now we just need to replace values in June[,2] with the new
+# expression:
+
+June[,2] <- June[,2]+1    # Did it work?
+
+# Let's combine both of these matricies into one matrix. Remember, just like we
+# combined three vectors to create a matrix using cbind, we can combine two
+# matricies using one of the bind functions, cbind() or rbind().  Which one
+# should we use?  If you're unsure, try both!
+
+cbind(May,June)
+rbind(May,June)
+
+# Notice how cbind gave us an error.  What happened?  Look like rbind worked, so let's assign that to a new object:
+
+spring <- rbind(May,June)
+
+# Part 5: Data Frames
+# -------------------
+#
+#
