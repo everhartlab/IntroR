@@ -85,15 +85,15 @@ c <- 3   # assign 3 to c
 # (top right).  These objects are not being saved to a hard drive, they are
 # stored in memory of your computer only.
 #
-# **DANGER** if you assign something to an object that already exists, R will do
-# what you tell it and overwrite that obect with the new assignment.
+# > **NOTE** if you assign something to an object that already exists, R will do
+# > what you tell it and overwrite that obect with the new assignment.
 #
 # Now we can execute our calculation using objects instead of numbers.  Try it!
 
 (a+b)/c
 
 # Avoid creating object names that start with a numnber because R will look at
-# the first character and try to enterpret the entire name as a mathematical
+# the first character and try to interpret the entire name as a mathematical
 # term.  Try this:
 
 2foxes <- 1   
@@ -210,10 +210,10 @@ str(today)
 
 c("May", day, year)   
 
-# In this case we didn't re-cast the object named today. To inspect the 
+# In this case we didn't re-assign the object named `today`. To inspect the 
 # structure of this vector, we can wrap the statement within the str() function,
 # as shown below. We also want to inspect the data mode (ie. whether numeric or 
-# character) using the functio mode().  Don't forget to use the up-arrow to
+# character) using the function mode().  Don't forget to use the up-arrow to
 # access the last like that you ran!
 
 str(c("May", day, year)) # this shows us the structure of the object
@@ -260,7 +260,7 @@ length(month)
 # There are 31 items in this list and we can inspect individual items in the
 # list based on their ordered position in the list using square brackets:
 
-day[24]  # the number inside the bracked corresponds to location of item in list, not value
+day[24]  # the number inside the brackets corresponds to location of item in list, not value
 
 # In this case, the 24th item in day is 24, which confirms that we created this
 # correctly. 
@@ -319,7 +319,7 @@ length(May)
 # Using the length() function, we see it says 93.  This represents the total
 # length of all three columns. Let's check the math:
 
-length(May)/3
+length(May) / 3
 
 # Because this is a 2-dimensional object, we can inspect the dimensions using the dim() function:
 
@@ -342,7 +342,7 @@ May[24, ]
 
 # You can also use this to access just one column of the matrix.  Let's look at month:
 
-May[,2]
+May[, 2]
 
 # Now that we've inspected the object May, let's create the same thing for June.
 # How should we do this?
@@ -351,7 +351,7 @@ May[,2]
 # them just like we did for May.  What is the simplest method to do this, using
 # the fewest number of steps?
 
-June <- May[1:30,]  # Created new object called June that used rows 1:30
+June <- May[1:30, ]  # Created new object called June that used rows 1:30
 
 # Inspect what we have now:
 
@@ -362,29 +362,29 @@ dim(June)
 # We need to change the month column so that it says 6 instead of 5, how can we
 # do this?  Let's just look at the column first:
 
-June[,2]
+June[, 2]
 
 # We need to add 1 to each of these values, so let's try that!
 
-June[,2]+1
+June[, 2] + 1
 
 # This worked, so now we just need to replace values in June[,2] with the new
 # expression:
 
-June[,2] <- June[,2]+1    # Did it work?
+June[, 2] <- June[, 2] + 1    # Did it work?
 
 # Let's combine both of these matricies into one matrix. Remember, just like we
 # combined three vectors to create a matrix using cbind, we can combine two
 # matricies using one of the bind functions, cbind() or rbind().  Which one
 # should we use?  If you're unsure, try both!
 
-cbind(May,June)
-rbind(May,June)
+cbind(May, June)
+rbind(May, June)
 
 # Notice how cbind gave us an error.  What happened?  Looks like rbind worked,
 # so let's assign that to a new object:
 
-spring <- rbind(May,June)
+spring <- rbind(May, June)
 
 # Inspect this object to ensure it was made correctly. 
 
@@ -402,19 +402,19 @@ spring <- rbind(May,June)
 # Months need to be changed from the number 5 to "May" and from 6 to "June" in
 # the second column.  Let's first look at the second column.
 
-spring[,2]
+spring[, 2]
 
 # We want to specify only the cells in this list that are 5. We know that rows 1
 # to 31 contain 5's and rows 32 to 61 contain 6's, which means we can inspect
 # those rows in the object spring:
 
-spring[1:31,2]
-spring[32:61,2]
+spring[1:31, 2]
+spring[32:61, 2]
 
 #Let's replace those values with "May" and "June":
 
-spring[1:31,2] <- "May"
-spring[32:61,2] <- "June"
+spring[1:31, 2] <- "May"
+spring[32:61, 2] <- "June"
 
 # Let's inspect spring now. 
 
@@ -502,5 +502,5 @@ cbind(spring,wkday)
 
 # Success!  Now you just need to recast the object spring with this version:
 
-spring <- cbind(spring,wkday)
+spring <- cbind(spring, wkday)
 spring
