@@ -180,44 +180,121 @@ str(name)
 
 length(name)
 
-# Let's compare this to a vector that contains only numeric data. For this
-# example, let's use today's date represented in numbers for the month (05), day
-# (18), and year (2017).  
+# Let's compare this to a vector that contains only numeric data. For this 
+# example, let's create three objects to represent today's date in numbers for
+# the month (05), day (24), and year (2017).
 
-today <- c(05, 18, 2017)
+month <- 05
+day <- 24
+year <- 2017
+
+# combine those three objects using the *combine* function:
+today <- c(month, day, year)
 
 # Inspect this object by typing the name *today* at the command line. You'll see
-# that R has eliminated the zero that preceeds the 5 and has kept the order we
-# provided for these items in the vector.  Let's take a look at the structure of today.
+# that R has eliminated the zero that preceeds the 5 and has kept the order we 
+# provided for these items in the vector.  Let's take a look at the structure of
+# today.
 
 str(today)
 
 # You'll notice that the vector has three items [1:3] and it contains only 
 # numeric data.
 # 
-# Let's do the same thing using names for the month and see how that changes our
-# vector. 
+# Let's do the same thing using the name May for month and see how that changes
+# our vector. Notice that we are not modifying the object *month*, we are simply
+# combining our two existing objects with the word "May".
 
-c("May", 18, 2017)   
+c("May", day, year)   
 
 # In this case we didn't re-cast the object named today. To inspect the 
 # structure of this vector, we can wrap the statement within the str() function,
 # as shown below.  Don't forget to use the up-arrow to access the last like that
 # you ran!
 
-str(c("May", 18, 2017))
+str(c("May", day, year))
 
 # Notice how R is trying to keep our data organized according to type.  Rather
 # than coding this vector as containing numbers and characters, it has decided
 # that because it can't call everything in our vector a number that it will call
 # everything characters. This process is called *coercion*.
 #
-# Let's say we wanted 
+# Let's say we wanted to create a table that showed every date this month:
+#
+#   day   month   year
+#   1     5       2017
+#   2     5       2017
+#   3     5       2017
+#   ...
+#
+# Because there will only be numbers in this table, we call it a matrix. We know
+# there are 31 days in the month, so we can modify the object day to contain all
+# of the 31 days in this month. To avoid typing each of the numbers, use the
+# *sequence* function:
 
+seq(1:31) 
 
+# You see at in the console that this created a sequence of 31 numbers from 1 to
+# 31. Let's go ahead and assign this to the object *day*.
 
+day <- seq(1:31)
 
+# For the objects month and year, we don't need to modify them, however, we want
+# to repeat each of them a total of 31 times because we need to repeat each, 
+# once for each day.
+# 
+# We can easily repeat the number 5 a total of 31 times using the function
+# rep(). Let's do that and modify the object month to contain these.
 
+month <- rep(5, 31) 
+
+# Let's check to make sure that month is correct using the function length():
+
+length(month)
+
+# We can modify the object year to contain 31 repeats of 2017, however, this 
+# time, let's get creative and, instead of specifying you want 2017 repeated 31
+# times, use the length() on the object *day* to specify the number of times we
+# want to repeat 2017.
+
+year <- rep(2017, length(day)) # notice how the number of repeats was replaced with length(day) inside the parentheses
+year
+length(year)
+
+# We now have three vectors to create our matrix and they are exactly the same length:
+
+length(day)
+length(month)
+length(year)
+
+# Each of these objects contains only numbers, no characters.  Let's check this again:
+
+str(day)
+str(month)
+str(year)
+
+# Because these are all numeric vectors and of equal length, we can combine them
+# into a matrix, which is a table that contains only numbers. First, here's a
+# quick reminder of what we want this to look:
+#   day   month   year
+#   1     5       2017
+#   2     5       2017
+#   3     5       2017
+#   ...
+
+# If we want to group our three objects, day, month, and year, together to look 
+# like this, should we bind them as rows or columns?  We can use rbind() if we
+# want to bind them by rows and cbind() if we want to bind them by column. 
+# 
+# If you don't know the answer, experiment with both functions!  Let's do it:
+
+rbind(day, month, year)
+cbind(day, month, year)
+
+# Now that we know which function to use, let's create it as a new object called
+# May. Don't re-type the command.  Use the up arrow to access the last function.
+
+May <- cbind(day, month, year)
 
 
 # Let's say that we have 5 fungicide concentrations that were used in an 
