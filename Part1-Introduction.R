@@ -212,10 +212,12 @@ c("May", day, year)
 
 # In this case we didn't re-cast the object named today. To inspect the 
 # structure of this vector, we can wrap the statement within the str() function,
-# as shown below.  Don't forget to use the up-arrow to access the last like that
-# you ran!
+# as shown below. We also want to inspect the data mode (ie. whether numeric or 
+# character) using the functio mode().  Don't forget to use the up-arrow to
+# access the last like that you ran!
 
-str(c("May", day, year))
+str(c("May", day, year)) # this shows us the structure of the object
+mode(c("May", day, year))
 
 # Notice how R is trying to keep our data organized according to type.  Rather
 # than coding this vector as containing numbers and characters, it has decided
@@ -280,9 +282,9 @@ length(year)
 
 # Each of these objects contains only numbers, no characters.  Let's check this again:
 
-str(day)
-str(month)
-str(year)
+mode(day)
+mode(month)
+mode(year)
 
 # Part 4: Matricies and evaluating a matrix
 # -----------------------------------------
@@ -379,11 +381,126 @@ June[,2] <- June[,2]+1    # Did it work?
 cbind(May,June)
 rbind(May,June)
 
-# Notice how cbind gave us an error.  What happened?  Look like rbind worked, so let's assign that to a new object:
+# Notice how cbind gave us an error.  What happened?  Looks like rbind worked,
+# so let's assign that to a new object:
 
 spring <- rbind(May,June)
 
-# Part 5: Data Frames
-# -------------------
+# Inspect this object to ensure it was made correctly. 
+
+# Part 5: Data Frames -------------------
+# 
+# We now have a new object spring that contains only numeric data. Let's revise
+# this object so that it uses names for the month instead of numbers and so that
+# we know what day of the week it is. We want it to look like this:
+#   day   month   year  wkday
+#   1     "May"   2017  "Mon"
+#   2     "May"   2017  "Tues"
+#   3     "May"   2017  "Wed"
+#   ...
+
+# Months need to be changed from the number 5 to "May" and from 6 to "June" in
+# the second column.  Let's first look at the second column.
+
+spring[,2]
+
+# We want to specify only the cells in this list that are 5. We know that rows 1
+# to 31 contain 5's and rows 32 to 61 contain 6's, which means we can inspect
+# those rows in the object spring:
+
+spring[1:31,2]
+spring[32:61,2]
+
+#Let's replace those values with "May" and "June":
+
+spring[1:31,2] <- "May"
+spring[32:61,2] <- "June"
+
+# Let's inspect spring now. 
+
+str(spring)
+head(spring)
+mode(spring)
+
+# Because we have introduced character data into the matrix, which contained 
+# data of the same type (all numeric), R has coerced this into a matrix of 
+# character data.  However, we know that some of these values are numeric and so
+# we want to convert the object spring into a data frame, which is a type of 
+# object that is allowed to contain both numeric and character data types. 
+# 
+# The function as.data.frame() can be used to convert our matrix, wherein
+# columns of characters that appear numeric will now be categorized as a numeric
+# data type. Re-cast spring as a data frame and then inspect it:
+
+spring <- as.data.frame(spring)
+str(spring)
+mode(spring)
+head(spring)
+
+# Notice how we no longer see row names that contain values inside square 
+# brackets. This is because the rownames were simply given numbers because there
+# were no row names given. Furthermore, we've now gained the ability to access
+# each column according to the column name by using the dollar sign following
+# the object name. Let's look at the day column of spring:
+
+spring$day
+
+# We can see that this data frames contains columns that are character data and
+# columns that are numeric data:
+
+mode(spring$day)
+mode(spring$month) 
+
+# Notice how month is coded as a factor data type instead of character. That is 
+# because in our original matrix, there were numbers assigned and so R has kept 
+# information about the order of the months. If we wanted to change that column
+# to character data, we can use the as.character() function:
+
+spring$month <- as.character(spring$month)
+mode(spring$month)
+
+# Now we are ready to add a new column to our data frame *spring* so that it
+# looks like this:
+#   day   month   year  wkday
+#   1     "May"   2017  "Mon"
+#   2     "May"   2017  "Tues"
+#   3     "May"   2017  "Wed"
+#   ...
+
+# How should we do this, using the fewest number of steps?
+# 
+# 
+# We know that this column will repeat "Mon", "Tues", "Wed", "Thurs", "Fri", 
+# "Sat", "Sun". We also know that we need that list to repeat until the total 
+# length of the list is equal to the number of days in May and June, which can 
+# be determined by using the length() function on any of the three columns in 
+# the object spring. So, let's create a new object called wkday with the days of
+# the week:
 #
-#
+
+eachday <- c("Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun")
+rep(eachday, length(spring$day))
+wkday <- rep(eachday, length(spring$day))
+
+# Inspect your new object wkday:
+
+length(wkday)
+
+# Looks like we made this list far too long.  We only needed the first 61
+# entries of wkday. Let's simply replace wkday with the first 61 entries:
+
+wkday <- wkday[1:61]
+
+# Inspect your object now:
+
+length(wkday)
+wkday
+
+# Now we are ready to bind this vector to our data frame. We can use cbind()
+
+cbind(spring,wkday)
+
+# Success!  Now you just need to recast the object spring with this version:
+
+spring <- cbind(spring,wkday)
+spring
