@@ -153,7 +153,7 @@ c(first.name, last.name)
 # 
 
 # Part 3: Vectors and sequences 
-#------------------------------
+# ------------------------------
 # 
 # Up to here, the objects we've created only contained a single item. You can 
 # store more than one item in a 1-dimensional object of unlimited length. Let's
@@ -311,7 +311,7 @@ May <- data.frame(day = day, month = month, year = year)
 May
 length(May)
 
-# Using the length() function, we see it says 3. This is because `May` has three
+# Using the `length()` function, we see it says 3. This is because `May` has three
 # columns: day, month, and year. A data frame is a two-dimensional object which
 # stores its information in rows and columns. 
 # 
@@ -349,10 +349,10 @@ head(may)  # if this didn't work, double-check that you spelled the object name 
 # Now that we have our table, the question becomes, how the heck do we inspect
 # different items?
 # 
-# Just like we can inspect the 24th element in a vector using `[24]`, we can
-# also use the brackets to subset a table, the only catch is that we have to use
-# the coordinates of the row(s) and the column(s) we want. We can do this by
-# specifying [row, column]. These are analagous to X and Y Cartesian
+# Just like we can inspect the 24th element in the `day` vector using `day[24]`,
+# we can also use the brackets to subset a table, the only catch is that we have
+# to use the coordinates of the row(s) and the column(s) we want. We can do this
+# by specifying `[row, column]`. These are analagous to X and Y Cartesian 
 # coordinates. Let's take a look at the elements in the 24th row, separately:
 
 May[24, 1] # day
@@ -376,7 +376,7 @@ May[, 2]
 
 May[, 2, drop = FALSE]
 
-# Now that we've inspected the object `May``, let's create the same thing for
+# Now that we've inspected the object `May`, let's create the same thing for
 # the month of June. How should we do this?
 # 
 # One option would be to create new obects for day, month, and year and combine
@@ -450,6 +450,10 @@ spring$month
 spring[1:31, "month"]     # May
 spring[-c(1:31), "month"] # June
 
+# 
+# > Notice that we used `-c(1:31)`, what do you think this is doing? Why would 
+# > this give us the values for the month of June?
+# 
 # We can use the `ifelse()` function to replace the values in our column. This
 # function produces a new vector based on a condition specified for another
 # vector. For example, if we graded students on a scale from 1 to 10 where 
@@ -476,7 +480,7 @@ str(spring)
 head(spring)
 class(spring)
 
-# Now we are ready to add a new column to our data frame `spring`` so that it
+# Now we are ready to add a new column to our data frame `spring` so that it
 # looks like this:
 # 
 # ```
