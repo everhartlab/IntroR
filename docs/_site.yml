@@ -10,7 +10,7 @@ navbar:
         - text: "Before the Workshop (Installation)"
           href: installation.html
         - text: "Part 1: Introduction to R"
-          href: coming-soon.html
+          href: Part1-Introduction.html
         - text: "Part 2: First Analysis"
           href: Part2-Analysis.html
         - text: "Part 3: Reshaping and Visualization"

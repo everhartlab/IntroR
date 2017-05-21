@@ -293,7 +293,7 @@ div.tocify {
       <a href="installation.html">Before the Workshop (Installation)</a>
     </li>
     <li>
-      <a href="coming-soon.html">Part 1: Introduction to R</a>
+      <a href="Part1-Introduction.html">Part 1: Introduction to R</a>
     </li>
     <li>
       <a href="Part2-Analysis.html">Part 2: First Analysis</a>
@@ -418,7 +418,7 @@ cols(
   JaggerWheat.Trt = col_double()
 )</code></pre>
 <pre class="r"><code>&gt; fungicide</code></pre>
-<pre><code># A tibble: 9 × 7
+<pre><code># A tibble: 9 x 7
   Julian.Date TwentyOneThirtySevenWheat TwentyOneThirtySevenWheat.trt
         &lt;int&gt;                     &lt;dbl&gt;                         &lt;dbl&gt;
 1          97                      0.00                          0.00
@@ -518,8 +518,6 @@ cols(
       key and value columns should be for our data.
       (hint: you can use example(gather) to run them automatically).
     </code></pre>
-<pre class="r"><code>&gt; #
-&gt; #</code></pre>
 <p>Now that we have our keys and values, we can plug them into <code>gather()</code>.</p>
 <blockquote>
 <p>Note, however, this uses “bare” names (names that are not between quotation marks) to specify columns. This is a feature of the tidyverse to make typing easier, but does not necessarily work outside of the tidyverse.</p>
@@ -527,23 +525,23 @@ cols(
 <p>To avoid typing all of the columns we want to collapse, we’ll simply specify the column that we don’t want to collapse, which is Julian.Date. This is done by placing a minus (-) symbol in front of it.</p>
 <pre class="r"><code>&gt; con.tidy &lt;- gather(data = control, key = Cultivar, value = Severity, -Julian.Date)
 &gt; con.tidy</code></pre>
-<pre><code># A tibble: 27 × 3
+<pre><code># A tibble: 27 x 3
    Julian.Date                  Cultivar Severity
          &lt;int&gt;                     &lt;chr&gt;    &lt;dbl&gt;
-1           97 TwentyOneThirtySevenWheat     0.00
-2          104 TwentyOneThirtySevenWheat     0.00
-3          111 TwentyOneThirtySevenWheat     0.00
-4          118 TwentyOneThirtySevenWheat     0.00
-5          125 TwentyOneThirtySevenWheat     0.00
-6          132 TwentyOneThirtySevenWheat     0.00
-7          139 TwentyOneThirtySevenWheat     2.34
-8          146 TwentyOneThirtySevenWheat     7.56
-9          154 TwentyOneThirtySevenWheat    28.78
+ 1          97 TwentyOneThirtySevenWheat     0.00
+ 2         104 TwentyOneThirtySevenWheat     0.00
+ 3         111 TwentyOneThirtySevenWheat     0.00
+ 4         118 TwentyOneThirtySevenWheat     0.00
+ 5         125 TwentyOneThirtySevenWheat     0.00
+ 6         132 TwentyOneThirtySevenWheat     0.00
+ 7         139 TwentyOneThirtySevenWheat     2.34
+ 8         146 TwentyOneThirtySevenWheat     7.56
+ 9         154 TwentyOneThirtySevenWheat    28.78
 10          97               CutterWheat     0.00
 # ... with 17 more rows</code></pre>
 <p>Note that we can easily get back our original data by using the <code>spread()</code> function, which is the opposite of <code>gather()</code>:</p>
 <pre class="r"><code>&gt; spread(data = con.tidy, key = Cultivar, value = Severity)</code></pre>
-<pre><code># A tibble: 9 × 4
+<pre><code># A tibble: 9 x 4
   Julian.Date CutterWheat JaggerWheat TwentyOneThirtySevenWheat
 *       &lt;int&gt;       &lt;dbl&gt;       &lt;dbl&gt;                     &lt;dbl&gt;
 1          97        0.00        0.00                      0.00
@@ -566,7 +564,7 @@ cols(
 [3] &quot;CutterWheat&quot;               &quot;JaggerWheat&quot;              </code></pre>
 <pre class="r"><code>&gt; colnames(treatment) &lt;- colnames(control)
 &gt; treatment</code></pre>
-<pre><code># A tibble: 9 × 4
+<pre><code># A tibble: 9 x 4
   Julian.Date TwentyOneThirtySevenWheat CutterWheat JaggerWheat
         &lt;int&gt;                     &lt;dbl&gt;       &lt;dbl&gt;       &lt;dbl&gt;
 1          97                      0.00        0.00        0.00
@@ -586,18 +584,18 @@ cols(
 <p>We can combine the treatments by using the <em>dplyr</em> function <code>bind_rows()</code>, which takes any number of data frames and places them on top of one another. It takes an optional argument, <code>.id</code> (note the “.”) that specifies a separate column to create identifying the source data frame.</p>
 <pre class="r"><code>&gt; fungicide.tidy &lt;- bind_rows(control = con.tidy, fungicide = trt.tidy, .id = &quot;Experiment&quot;)
 &gt; fungicide.tidy</code></pre>
-<pre><code># A tibble: 54 × 4
+<pre><code># A tibble: 54 x 4
    Experiment Julian.Date                  Cultivar Severity
         &lt;chr&gt;       &lt;int&gt;                     &lt;chr&gt;    &lt;dbl&gt;
-1     control          97 TwentyOneThirtySevenWheat     0.00
-2     control         104 TwentyOneThirtySevenWheat     0.00
-3     control         111 TwentyOneThirtySevenWheat     0.00
-4     control         118 TwentyOneThirtySevenWheat     0.00
-5     control         125 TwentyOneThirtySevenWheat     0.00
-6     control         132 TwentyOneThirtySevenWheat     0.00
-7     control         139 TwentyOneThirtySevenWheat     2.34
-8     control         146 TwentyOneThirtySevenWheat     7.56
-9     control         154 TwentyOneThirtySevenWheat    28.78
+ 1    control          97 TwentyOneThirtySevenWheat     0.00
+ 2    control         104 TwentyOneThirtySevenWheat     0.00
+ 3    control         111 TwentyOneThirtySevenWheat     0.00
+ 4    control         118 TwentyOneThirtySevenWheat     0.00
+ 5    control         125 TwentyOneThirtySevenWheat     0.00
+ 6    control         132 TwentyOneThirtySevenWheat     0.00
+ 7    control         139 TwentyOneThirtySevenWheat     2.34
+ 8    control         146 TwentyOneThirtySevenWheat     7.56
+ 9    control         154 TwentyOneThirtySevenWheat    28.78
 10    control          97               CutterWheat     0.00
 # ... with 44 more rows</code></pre>
 <p>We’ve gone to the work to tidy up the data; let’s save it to our disk so that we can easily reuse it later.</p>
@@ -617,7 +615,6 @@ cols(
       What should be on the axes?
       Should we use lines, points, bars, boxplots, etc?
     </code></pre>
-<pre class="r"><code>&gt; #</code></pre>
 <p>If you haven’t taken the time to address the questions above, do so now.</p>
 <div id="what-is-ggplot2" class="section level3">
 <h3>What is ggplot2</h3>
@@ -683,9 +680,6 @@ cols(
 <p>This is much clearer, but instead of having three panels side by side, we want them in a column. We can specify the number of columns by using <code>ncol</code>. Again, because we are manipulating how the plot is displayed and not adding layers, we can simply re-call this function</p>
 <pre class="r"><code>&gt; (fungicide.plot &lt;- fungicide.plot + facet_wrap(~Cultivar, ncol = 1))</code></pre>
 <p><img src="Part3-Visualization_files/figure-html/unnamed-chunk-21-1.png" width="100%" style="display: block; margin: auto;" /></p>
-<pre class="r"><code>&gt; #
-&gt; #
-&gt; #</code></pre>
 <div id="axis-labels" class="section level3">
 <h3>Axis labels</h3>
 <p>We also need to update the axis labels. This is easily done with <code>xlab()</code> and <code>ylab()</code>:</p>
@@ -741,8 +735,6 @@ cols(
 +   ylab(&quot;Disease Severity&quot;)
 &gt; fungicide.plot</code></pre>
 <p><img src="Part3-Visualization_files/figure-html/unnamed-chunk-26-1.png" width="100%" style="display: block; margin: auto;" /></p>
-<pre class="r"><code>&gt; #
-&gt; #</code></pre>
 </div>
 <div id="saving-your-plot" class="section level3">
 <h3>Saving your plot</h3>

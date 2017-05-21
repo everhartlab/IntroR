@@ -293,7 +293,7 @@ div.tocify {
       <a href="installation.html">Before the Workshop (Installation)</a>
     </li>
     <li>
-      <a href="coming-soon.html">Part 1: Introduction to R</a>
+      <a href="Part1-Introduction.html">Part 1: Introduction to R</a>
     </li>
     <li>
       <a href="Part2-Analysis.html">Part 2: First Analysis</a>
@@ -370,8 +370,8 @@ div.tocify {
 <p>In order to use <code>list.files()</code>, we should provide it with a file path. We can provide it a “.”, which means “here” to most computer programs.</p>
 <pre class="r"><code>&gt; list.files(&quot;.&quot;)</code></pre>
 <pre><code>[1] &quot;data&quot;                  &quot;docs&quot;                  &quot;IntroR.Rproj&quot;         
-[4] &quot;LICENSE&quot;               &quot;Makefile&quot;              &quot;Part2-Analysis.R&quot;     
-[7] &quot;Part3-Visualization.R&quot; &quot;README.md&quot;            </code></pre>
+[4] &quot;LICENSE&quot;               &quot;Makefile&quot;              &quot;Part1-Introduction.R&quot; 
+[7] &quot;Part2-Analysis.R&quot;      &quot;Part3-Visualization.R&quot; &quot;README.md&quot;            </code></pre>
 <p>You can see that the first entry in here is “data”. This is where we’ve placed the fungicide example data.</p>
 <pre class="r"><code>&gt; list.files(&quot;data&quot;)</code></pre>
 <pre><code>[1] &quot;FungicideExample.csv&quot; &quot;README.md&quot;           </code></pre>
@@ -404,7 +404,6 @@ div.tocify {
 <li>If the first row are column names : yes</li>
 <li>The separator for each cell in the data : comma</li>
 </ol>
-<pre class="r"><code>&gt; #</code></pre>
 <p>Now that we have these elements, we can read the data into a variable, which we can call “fungicide”. Once we do this, we can check the dimensions to make sure that we have all of the data.</p>
 <pre class="r"><code>&gt; fungicide &lt;- read.csv(&quot;data/FungicideExample.csv&quot;, header = TRUE, sep = &quot;,&quot;)
 &gt; nrow(fungicide)</code></pre>
@@ -451,7 +450,6 @@ div.tocify {
 <li>How does the size of the fungicide effect compare to the effect of cultivar?</li>
 <li>Would it be the same as cultivar?</li>
 </ol>
-<pre class="r"><code>&gt; #</code></pre>
 <p>To answer these questions, we will use the summary statistic, Area Under the Disease Progress Curve (AUDPC).</p>
 <p>So, how do you calculate this? You could code the trapezoid rule yourself, OR you could find a package that was designed for this.</p>
 <pre class="r"><code>&gt; stop(&quot;
