@@ -8,8 +8,7 @@
 #  1. How to use this script and R
 #  2. Creating objects
 #  3. Sequences and vectors (1-D)
-#  4. Matrices and evaluating a matrix (2-D)
-#  5. Data frames
+#  4. Data frames
 #  
 # Part 1: How to use this R scrpt
 # -------------------------------
@@ -26,19 +25,19 @@
 
     print("the instructor's name is Sydney")  
 
-#Run a single line of your script in the console by placing your cursor on the 
-#line you want to submit and use your cursor to press the "Run" button at the 
-#top right. You can also use the shortcut key strokes cmd+enter (mac) or 
-#ctrl+enter (PC) to run a single line at a time.
-#
-#The two other most important keyboard shortcuts that you'll want to use are the
-#*Tab* key to auto-complete your typing at the command line and ctrl+up arrow or
-#cmd+up arrow to access the most recently typed commands.
-#
-#You can also select only part of a line to have it run on the console.  Try
-#running the following command without copy+paste:   print("my name is _____")
-#
-#R can also be used to perform calculations, such as the following:
+# Run a single line of your script in the console by placing your cursor on the 
+# line you want to submit and use your cursor to press the "Run" button at the 
+# top right. You can also use the shortcut key strokes cmd+enter (mac) or 
+# ctrl+enter (PC) to run a single line at a time.
+# 
+# The two other most important keyboard shortcuts that you'll want to use are the
+# *Tab* key to auto-complete your typing at the command line and ctrl+up arrow or
+# cmd+up arrow to access the most recently typed commands.
+# 
+# You can also select only part of a line to have it run on the console.  Try
+# running the following command without copy+paste:   print("my name is _____")
+# 
+# R can also be used to perform calculations, such as the following:
 
 5+1/3
 
@@ -194,7 +193,7 @@ year <- 2017
 # combine those three objects using the *combine* function:
 today <- c(month, day, year)
 
-# Inspect this object by typing the name *today* at the command line. You'll see
+# Inspect this object by typing the name `today` at the command line. You'll see
 # that R has eliminated the zero that preceeds the 5 and has kept the order we 
 # provided for these items in the vector.  Let's take a look at the structure of
 # today.
@@ -212,12 +211,12 @@ c("May", day, year)
 
 # In this case we didn't re-assign the object named `today`. To inspect the 
 # structure of this vector, we can wrap the statement within the str() function,
-# as shown below. We also want to inspect the data mode (ie. whether numeric or 
-# character) using the function mode().  Don't forget to use the up-arrow to
+# as shown below. We also want to inspect the data class (ie. whether numeric or 
+# character) using the function class().  Don't forget to use the up-arrow to
 # access the last like that you ran!
 
 str(c("May", day, year)) # this shows us the structure of the object
-mode(c("May", day, year))
+class(c("May", day, year))
 
 # Notice how R is trying to keep our data organized according to type.  Rather
 # than coding this vector as containing numbers and characters, it has decided
@@ -226,117 +225,142 @@ mode(c("May", day, year))
 #
 # Let's say we wanted to create a table that showed every date this month:
 #
+# ```
 #   day   month   year
 #   1     5       2017
 #   2     5       2017
 #   3     5       2017
 #   ...
+# ```
 #
-# Because there will only be numbers in this table, we call it a matrix. We know
-# there are 31 days in the month, so we can modify the object day to contain all
-# of the 31 days in this month. To avoid typing each of the numbers, use the
-# *sequence* function:
+# We know there are 31 days in the month, so we can modify the object day to
+# contain all of the 31 days in this month. Instead of typing each number out by
+# hand, we can place a colon (`:`) between 1 and 31, which is a shortcut in R
+# for creating sequences of numbers.
 
-seq(1:31) 
+1:31
 
 # You see at in the console that this created a sequence of 31 numbers from 1 to
-# 31. Let's go ahead and assign this to the object *day*.
+# 31. Let's go ahead and assign this to the object `day`.
 
-day <- seq(1:31)
+day <- 1:31
 
 # For the objects month and year, we don't need to modify them, however, we want
 # to repeat each of them a total of 31 times because we need to repeat each, 
 # once for each day.
 # 
-# We can easily repeat the number 5 a total of 31 times using the function
-# rep(). Let's do that and modify the object month to contain these.
+# We can easily repeat the number 5 a total of 31 times using the function 
+# `rep()`, specifying how many `times` we should repeat this object. Let's
+# assign `5` to `month` and modify the object month to contain 31 copies.
 
-month <- rep(5, 31) 
+month <- 5
+month <- rep(month, times = 31) 
 
-# Let's check to make sure that month is correct using the function length():
+# Let's check to make sure that month is correct using the function `length()`:
 
 length(month)
 
-# There are 31 items in this list and we can inspect individual items in the
-# list based on their ordered position in the list using square brackets:
+# There are 31 items in this vector and we can inspect individual items in the
+# vector based on their ordered position using square brackets:
 
-day[24]  # the number inside the brackets corresponds to location of item in list, not value
+day[24]  
+month[24] # the number inside the brackets corresponds to location of item in list, not value
 
-# In this case, the 24th item in day is 24, which confirms that we created this
-# correctly. 
+# In this case, the 24th item in `day` is 24, and the 24th item in `month` is 5
+# which confirms that we created this correctly.
 
-# We can modify the object year to contain 31 repeats of 2017, however, this 
-# time, let's get creative and, instead of specifying you want 2017 repeated 31
-# times, use the length() on the object *day* to specify the number of times we
-# want to repeat 2017.
+# We can create the object `year` to contain 31 repeats of 2017, however, this 
+# time, let's say we wanted to make sure that this object was always the same
+# length as the number of days we have in a month. Instead of specifying `31`,
+# we can simply get that information using the `length()` function. Here, we'll
+# replace `31` with `length(day)`, which is equivalent.
 
-year <- rep(2017, length(day)) # notice how the number of repeats was replaced with length(day) inside the parentheses
+year <- rep(2017, times = length(day))
 year
 length(year)
 
-# We now have three vectors to create our matrix and they are exactly the same length:
+# We now have three vectors to create our table and they are exactly the same length:
 
 length(day)
 length(month)
 length(year)
 
-# Each of these objects contains only numbers, no characters.  Let's check this again:
-
-mode(day)
-mode(month)
-mode(year)
-
-# Part 4: Matricies and evaluating a matrix
-# -----------------------------------------
-# Because these are all numeric vectors and of equal length, we can combine them
-# into a matrix, which is a table that contains only numbers. First, here's a
-# quick reminder of what we want this to look:
+# Part 4: Data frames
+# --------------------
+# 
+# Remember that our goal here is to create a table with the columns "month",
+# "day", and "year". First, here's a quick reminder of what we want this to
+# look like:
+# 
+# ```
 #   day   month   year
 #   1     5       2017
 #   2     5       2017
 #   3     5       2017
 #   ...
-
-# If we want to group our three objects, day, month, and year, together to look 
-# like this, should we bind them as rows or columns?  We can use rbind() if we
-# want to bind them by rows and cbind() if we want to bind them by column. 
+# ```
 # 
-# If you don't know the answer, experiment with both functions!  Let's do it:
+# In order to create a data frame, we can use the command `data.frame()`. This
+# function will create columns out of vectors that are all the same length. In
+# the function, we just have to specify the columns.
 
-rbind(day, month, year)
-cbind(day, month, year)
-
-# Now that we know which function to use, let's create it as a new object called
-# May. Don't re-type the command.  Use the up arrow to access the last function.
-
-May <- cbind(day, month, year)
+May <- data.frame(day = day, month = month, year = year)
 
 # Let's inspect this new object in the same way as vectors:
 
 May
 length(May)
 
-# Using the length() function, we see it says 93.  This represents the total
-# length of all three columns. Let's check the math:
-
-length(May) / 3
-
-# Because this is a 2-dimensional object, we can inspect the dimensions using the dim() function:
+# Using the length() function, we see it says 3. This is because `May` has three
+# columns: day, month, and year. A data frame is a two-dimensional object which
+# stores its information in rows and columns. 
+#
+# Because this is a 2-dimensional object, we can inspect the dimensions using
+# the `dim()` function:
 
 dim(May)
 
-# Because this object is rather large, we didn't get to see the top rows of the
-# obect.  A quick way to look at the top of the file is with the head() function
-# and if we wanted to look at the bottom, we would use tail(). 
+# This tells us that we have 31 rows and 3 columns. R also provides the `nrow()`
+# and `ncol()` functions to make it easier to remember which is which:
 
-head(may)  #if this didn't work, double-check that you spelled the object name correctly
+nrow(May)
+ncol(May)
 
-# Notice how the columns have the names we used for each of the vectors, day, 
-# month, and year. Each row is labeled with one number followed by a comma 
-# inside square brackets. These are analagous to X and Y Cartesian coordinates. 
-# You can access each entry within the dimensions of your object. We can use
-# them to access an individual line in the matrix. Let's look at the row that
-# contains today's date:
+# What happens when we use the `str()` function?
+
+str(May)
+
+# We can see that it's listing the columns we have in our table and showing us
+# how they are represented. Notice the `$` to the left of each column name, 
+# this is how we access the columns of the data frame:
+
+May$day
+May$month
+May$year
+
+# You can see that these are the same as the vectors we created earlier.
+# 
+# Because this object is rather large, we didn't get to see the top rows of the 
+# obect.  A quick way to look at the top of the object is with the `head()`
+# function and if we wanted to look at the bottom, we would use `tail()`.
+
+head(may)  # if this didn't work, double-check that you spelled the object name correctly
+
+# Now that we have our table, the question becomes, how the heck do we inspect
+# different items?
+# 
+# Just like we can inspect the 24th element in a vector using `[24]`, we can
+# also use the brackets to subset a table, the only catch is that we have to use
+# the coordinates of the row(s) and the column(s) we want. We can do this by
+# specifying [row, column]. These are analagous to X and Y Cartesian
+# coordinates. Let's take a look at the elements in the 24th row, separately:
+
+May[24, 1] # day
+May[24, "month"] # you can use characters when the elements are named!
+May[24, 3] # year
+
+# If we don't specify a dimension, R will give us the entire contents of that
+# dimension. Let's look at the row that contains today's date:
 
 May[24, ]
 
@@ -344,38 +368,49 @@ May[24, ]
 
 May[, 2]
 
-# Now that we've inspected the object May, let's create the same thing for June.
-# How should we do this?
+# Notice, however that this result now appears to be a a vector! This is because
+# of a sneaky default option called `drop = TRUE`. R tries to "help" by removing
+# the dimensions of your data frame if you choose only one column. If you want
+# to keep this as a data frame, you can turn off this option *inside the 
+# brackets*:
+
+May[, 2, drop = FALSE]
+
+# Now that we've inspected the object `May``, let's create the same thing for
+# the month of June. How should we do this?
 # 
 # One option would be to create new obects for day, month, and year and combine
 # them just like we did for May.  What is the simplest method to do this, using
-# the fewest number of steps?
+# the fewest number of steps? 
+# 
+# We can simply make a copy of `May` with 30 days.
 
-June <- May[1:30, ]  # Created new object called June that used rows 1:30
+June <- May[1:30, , drop = FALSE]  # Created new object called June that used rows 1:30
 
 # Inspect what we have now:
 
-head(June)
-tail(June)
-dim(June)
+str(June)
+tail(June) # we should have 30 days.
 
 # We need to change the month column so that it says 6 instead of 5, how can we
 # do this?  Let's just look at the column first:
 
-June[, 2]
+June$month
 
 # We need to add 1 to each of these values, so let's try that!
 
-June[, 2] + 1
+June$month + 1
 
 # This worked, so now we just need to replace values in June[,2] with the new
 # expression:
 
-June[, 2] <- June[, 2] + 1    # Did it work?
+June$month <- June$month + 1    # Did it work?
+str(June)
 
-# Let's combine both of these matricies into one matrix. Remember, just like we
-# combined three vectors to create a matrix using cbind, we can combine two
-# matricies using one of the bind functions, cbind() or rbind().  Which one
+# Let's combine both of these tables into one. Of course, now that we have two
+# dimensions, there are two ways we can combine them, by rows or by columns. R
+# provides two functions that can help us with that called `rbind()` and 
+# `cbind()` which bind together rows and columns, respectively.  Which one
 # should we use?  If you're unsure, try both!
 
 cbind(May, June)
@@ -388,119 +423,98 @@ spring <- rbind(May, June)
 
 # Inspect this object to ensure it was made correctly. 
 
-# Part 5: Data Frames -------------------
-# 
+str(spring)
+head(spring)
+tail(spring)
+
 # We now have a new object spring that contains only numeric data. Let's revise
 # this object so that it uses names for the month instead of numbers and so that
 # we know what day of the week it is. We want it to look like this:
+# ```
 #   day   month   year  wkday
 #   1     "May"   2017  "Mon"
 #   2     "May"   2017  "Tues"
 #   3     "May"   2017  "Wed"
 #   ...
-
+# ```
+# 
 # Months need to be changed from the number 5 to "May" and from 6 to "June" in
-# the second column.  Let's first look at the second column.
+# the second column.  Let's first look at the month column.
 
-spring[, 2]
+spring$month
 
 # We want to specify only the cells in this list that are 5. We know that rows 1
-# to 31 contain 5's and rows 32 to 61 contain 6's, which means we can inspect
+# to 31 contain 5's and the rest contain 6's, which means we can inspect
 # those rows in the object spring:
 
-spring[1:31, 2]
-spring[32:61, 2]
+spring[1:31, "month"]     # May
+spring[-c(1:31), "month"] # June
 
-#Let's replace those values with "May" and "June":
+# We can use the `ifelse()` function to replace the values in our column. This
+# function produces a new vector based on a condition specified for another
+# vector. For example, if we graded students on a scale from 1 to 10 where 
+# anything above 5 was a passing grade, we could create a pass/fail vector like
+# so:
 
-spring[1:31, 2] <- "May"
-spring[32:61, 2] <- "June"
+grades <- data.frame(grade = 1:10)
+grades
+grades$eval <- ifelse(grades$grade > 5, yes = "pass", no = "fail")
+grades
 
+# We can do the same thing with our `spring` data frame, except this time, we
+# want to say if the month is 5, then it's May, otherwise, we call it June:
+
+ifelse(spring$month == 5, yes = "May", no = "June")
+spring$month <- ifelse(spring$month == 5, yes = "May", no = "June")
+
+# > Notice that we had to use `==` to indicate equality. This is so that R 
+# > doesn't get confused and assume we are using the argument assignment, `=`.
+# 
 # Let's inspect spring now. 
 
 str(spring)
 head(spring)
-mode(spring)
+class(spring)
 
-# Because we have introduced character data into the matrix, which contained 
-# data of the same type (all numeric), R has coerced this into a matrix of 
-# character data.  However, we know that some of these values are numeric and so
-# we want to convert the object spring into a data frame, which is a type of 
-# object that is allowed to contain both numeric and character data types. 
-# 
-# The function as.data.frame() can be used to convert our matrix, wherein
-# columns of characters that appear numeric will now be categorized as a numeric
-# data type. Re-cast spring as a data frame and then inspect it:
-
-spring <- as.data.frame(spring)
-str(spring)
-mode(spring)
-head(spring)
-
-# Notice how we no longer see row names that contain values inside square 
-# brackets. This is because the rownames were simply given numbers because there
-# were no row names given. Furthermore, we've now gained the ability to access
-# each column according to the column name by using the dollar sign following
-# the object name. Let's look at the day column of spring:
-
-spring$day
-
-# We can see that this data frames contains columns that are character data and
-# columns that are numeric data:
-
-mode(spring$day)
-mode(spring$month) 
-
-# Notice how month is coded as a factor data type instead of character. That is 
-# because in our original matrix, there were numbers assigned and so R has kept 
-# information about the order of the months. If we wanted to change that column
-# to character data, we can use the as.character() function:
-
-spring$month <- as.character(spring$month)
-mode(spring$month)
-
-# Now we are ready to add a new column to our data frame *spring* so that it
+# Now we are ready to add a new column to our data frame `spring`` so that it
 # looks like this:
+#
+# ```
 #   day   month   year  wkday
 #   1     "May"   2017  "Mon"
 #   2     "May"   2017  "Tues"
 #   3     "May"   2017  "Wed"
 #   ...
-
+# ```
+# 
 # How should we do this, using the fewest number of steps?
 # 
 # 
 # We know that this column will repeat "Mon", "Tues", "Wed", "Thurs", "Fri", 
-# "Sat", "Sun". We also know that we need that list to repeat until the total 
-# length of the list is equal to the number of days in May and June, which can 
-# be determined by using the length() function on any of the three columns in 
-# the object spring. So, let's create a new object called wkday with the days of
-# the week:
+# "Sat", "Sun" (since May starts on a Monday this year). We also know that we
+# need that list to repeat until the total length of the list is equal to the
+# number of days in May and June, which can be determined by using the `nrow()`
+# function. 
 #
 
 eachday <- c("Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun")
-rep(eachday, length(spring$day))
-wkday <- rep(eachday, length(spring$day))
-
-# Inspect your new object wkday:
-
-length(wkday)
-
-# Looks like we made this list far too long.  We only needed the first 61
-# entries of wkday. Let's simply replace wkday with the first 61 entries:
-
-wkday <- wkday[1:61]
-
-# Inspect your object now:
-
-length(wkday)
+wkday   <- rep(eachday, times = nrow(spring))
 wkday
 
-# Now we are ready to bind this vector to our data frame. We can use cbind()
+# Uh-oh, it looks like we made this list far too long.  This is because `times`
+# means how many times the entire vector needs to be repeated. If we look at the
+# examples in the help page for rep (type help("rep")), we can see that we need
+# to use the argument `length.out`
 
-cbind(spring, wkday)
+wkday <- rep(eachday, length.out = nrow(spring))
 
-# Success!  Now you just need to recast the object spring with this version:
+# Inspect your new object `wkday` and make sure it's the correct length.
 
-spring <- cbind(spring, wkday)
+length(wkday) == nrow(spring)
+wkday
+
+# Now we are ready to add this vector to our data frame. We can do this by
+# specifying the name of the column we want to add.
+
+spring$wkday <- wkday
 spring
