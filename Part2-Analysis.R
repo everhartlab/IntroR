@@ -65,7 +65,7 @@ stop("
 #  1. The path to the data set                 : data/FungicideExample.csv
 #  2. If the first row are column names        : yes
 #  3. The separator for each cell in the data  : comma
-#
+# 
 # Now that we have these elements, we can read the data into a variable, which
 # we can call "fungicide". Once we do this, we can check the dimensions to make
 # sure that we have all of the data.
@@ -99,7 +99,7 @@ str(fungicide)
 #  1. How does the size of the fungicide effect compare to the effect of
 #     cultivar? 
 #  2. Would it be the same as cultivar?
-#
+# 
 # To answer these questions, we will use the summary statistic, Area Under the
 # Disease Progress Curve (AUDPC). 
 # 

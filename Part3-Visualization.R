@@ -176,8 +176,8 @@ stop("
       (hint: you can use example(gather) to run them automatically).
     ")
 
-#
-#
+# 
+# 
 # 
 # Now that we have our keys and values, we can plug them into `gather()`. 
 # 
@@ -252,7 +252,7 @@ stop("
       What should be on the axes?
       Should we use lines, points, bars, boxplots, etc?
     ")
-#
+# 
 # If you haven't taken the time to address the questions above, do so now. 
 # 
 # 
@@ -386,9 +386,9 @@ fungicide.plot
 
 (fungicide.plot <- fungicide.plot + facet_wrap(~Cultivar, ncol = 1))
 
-#
-#
-#
+# 
+# 
+# 
 # ### Axis labels 
 # 
 # We also need to update the axis labels. This is easily done with `xlab()` and
@@ -458,8 +458,8 @@ fungicide.plot <- ggplot(fungicide.tidy, aes(x = Julian.Date, y = Severity)) +
   ylab("Disease Severity")
 fungicide.plot
 
-#
-#
+# 
+# 
 # 
 # ### Saving your plot
 # 

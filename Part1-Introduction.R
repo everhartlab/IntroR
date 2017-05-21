@@ -4,7 +4,7 @@
 # 
 # In this section we will investigate the following questions:
 #  [[  How does R understand data?  ]]
-#
+# 
 #  1. How to use this script and R
 #  2. Creating objects
 #  3. Sequences and vectors (1-D)
@@ -49,13 +49,13 @@
 (5+1)/3
 
 # Does it matter if there are spaces added into this?
-#
+# 
  ( 5 + 1 ) / 3
 
 # That shows us that the spaces did not matter for the calculation.
-#
+# 
 # R also has some pre-defined matematical terms that you can use, such as pi.
-#
+# 
 # What is pi times pi ?
 
 pi*pi
@@ -83,10 +83,10 @@ c <- 3   # assign 3 to c
 # As you are assigning these numbers to objects, they appear in your environment
 # (top right).  These objects are not being saved to a hard drive, they are
 # stored in memory of your computer only.
-#
+# 
 # > **NOTE** if you assign something to an object that already exists, R will do
 # > what you tell it and overwrite that obect with the new assignment.
-#
+# 
 # Now we can execute our calculation using objects instead of numbers.  Try it!
 
 (a+b)/c
@@ -98,7 +98,7 @@ c <- 3   # assign 3 to c
 2foxes <- 1   
 
 # The error here tells us that something went wrong and R cannot proceed.
-#
+# 
 # If we want to assign (a+b)/c to a new object called 'answer' -- what will the
 # object contain?  Find out:
 
@@ -150,7 +150,7 @@ c(first.name, last.name)
 # name is placed inside quotes and that's because c() combined names into a
 # single vector that contains two items, your first and your last name.  This
 # brings us to the next part in our introduction, vectors.
-#
+# 
 
 # Part 3: Vectors and sequences 
 #------------------------------
@@ -177,7 +177,7 @@ str(name)
 # to 2 as shown by the [1:2]. This also tells us that this list is a *character*
 # list, which is indicated by the *chr* label. We also see the two items in this
 # vector, which is your first and last name.
-#
+# 
 # What is the length of your name?  We can find out using the function lenght()
 
 length(name)
@@ -222,9 +222,9 @@ class(c("May", day, year))
 # than coding this vector as containing numbers and characters, it has decided
 # that because it can't call everything in our vector a number that it will call
 # everything characters. This process is called *coercion*.
-#
+# 
 # Let's say we wanted to create a table that showed every date this month:
-#
+# 
 # ```
 #   day   month   year
 #   1     5       2017
@@ -232,7 +232,7 @@ class(c("May", day, year))
 #   3     5       2017
 #   ...
 # ```
-#
+# 
 # We know there are 31 days in the month, so we can modify the object day to
 # contain all of the 31 days in this month. Instead of typing each number out by
 # hand, we can place a colon (`:`) between 1 and 31, which is a shortcut in R
@@ -314,7 +314,7 @@ length(May)
 # Using the length() function, we see it says 3. This is because `May` has three
 # columns: day, month, and year. A data frame is a two-dimensional object which
 # stores its information in rows and columns. 
-#
+# 
 # Because this is a 2-dimensional object, we can inspect the dimensions using
 # the `dim()` function:
 
@@ -478,7 +478,7 @@ class(spring)
 
 # Now we are ready to add a new column to our data frame `spring`` so that it
 # looks like this:
-#
+# 
 # ```
 #   day   month   year  wkday
 #   1     "May"   2017  "Mon"
@@ -495,7 +495,7 @@ class(spring)
 # need that list to repeat until the total length of the list is equal to the
 # number of days in May and June, which can be determined by using the `nrow()`
 # function. 
-#
+# 
 
 eachday <- c("Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun")
 wkday   <- rep(eachday, times = nrow(spring))
