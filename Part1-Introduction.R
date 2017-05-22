@@ -10,7 +10,7 @@
 #  3. Sequences and vectors (1-D)
 #  4. Data frames
 #  
-# Part 1: How to use this R scrpt
+# Part 1: How to use this R script
 # -------------------------------
 # 
 # A script is a text document that contains instructions and commands The # 
