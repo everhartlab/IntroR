@@ -268,7 +268,10 @@ month[24] # the number inside the brackets corresponds to location of item in li
 
 # In this case, the 24th item in `day` is 24, and the 24th item in `month` is 5
 # which confirms that we created this correctly.
-
+# 
+# > Type `day[32]` into your R console. What do you get? What does it mean? Ask
+# > yourself the question, "Are there any months with 32 days?"
+# 
 # We can create the object `year` to contain 31 repeats of 2017, however, this 
 # time, let's say we wanted to make sure that this object was always the same
 # length as the number of days we have in a month. Instead of specifying `31`,
