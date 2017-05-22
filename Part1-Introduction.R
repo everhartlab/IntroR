@@ -148,15 +148,15 @@ c(first.name, last.name)
 # Notice how the names are returned inside quotation marks, which tells us that
 # these are interpreted as character data in R. You'll also notice that each
 # name is placed inside quotes and that's because c() combined names into a
-# single vector that contains two items, your first and your last name.  This
+# single vector that contains two elements, your first and your last name.  This
 # brings us to the next part in our introduction, vectors.
 # 
 
 # Part 3: Vectors and sequences 
 # ------------------------------
 # 
-# Up to here, the objects we've created only contained a single item. You can 
-# store more than one item in a 1-dimensional object of unlimited length. Let's
+# Up to here, the objects we've created only contained a single element. You can 
+# store more than one element in a 1-dimensional object of unlimited length. Let's
 # create an object that is a vector of our first and last names using the two
 # objects that we created previously.
 # 
@@ -173,9 +173,9 @@ name <- c(first.name, last.name)
 
 str(name)
 
-# This shows us that this is a vector because the items in it are ordered from 1
+# This shows us that this is a vector because the elements in it are ordered from 1
 # to 2 as shown by the [1:2]. This also tells us that this list is a *character*
-# list, which is indicated by the *chr* label. We also see the two items in this
+# list, which is indicated by the *chr* label. We also see the two elements in this
 # vector, which is your first and last name.
 # 
 # What is the length of your name?  We can find out using the function lenght()
@@ -195,12 +195,12 @@ today <- c(month, day, year)
 
 # Inspect this object by typing the name `today` at the command line. You'll see
 # that R has eliminated the zero that preceeds the 5 and has kept the order we 
-# provided for these items in the vector.  Let's take a look at the structure of
+# provided for these elements in the vector.  Let's take a look at the structure of
 # today.
 
 str(today)
 
-# You'll notice that the vector has three items [1:3] and it contains only 
+# You'll notice that the vector has three elements [1:3] and it contains only 
 # numeric data.
 # 
 # Let's do the same thing using the name May for month and see how that changes
@@ -260,13 +260,13 @@ month <- rep(month, times = 31)
 
 length(month)
 
-# There are 31 items in this vector and we can inspect individual items in the
+# There are 31 elements in this vector and we can inspect individual elements in the
 # vector based on their ordered position using square brackets:
 
 day[24]  
-month[24] # the number inside the brackets corresponds to location of item in list, not value
+month[24] # the number inside the brackets corresponds to location of element in list, not value
 
-# In this case, the 24th item in `day` is 24, and the 24th item in `month` is 5
+# In this case, the 24th element in `day` is 24, and the 24th element in `month` is 5
 # which confirms that we created this correctly.
 # 
 # > Type `day[32]` into your R console. What do you get? What does it mean? Ask
@@ -350,7 +350,7 @@ May$year
 head(may)  # if this didn't work, double-check that you spelled the object name correctly
 
 # Now that we have our table, the question becomes, how the heck do we inspect
-# different items?
+# different elements?
 # 
 # Just like we can inspect the 24th element in the `day` vector using `day[24]`,
 # we can also use the brackets to subset a table, the only catch is that we have
