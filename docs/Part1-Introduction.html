@@ -493,7 +493,11 @@ div.tocify {
 <pre><code>[1] 24</code></pre>
 <pre class="r"><code>&gt; month[24] # the number inside the brackets corresponds to location of item in list, not value</code></pre>
 <pre><code>[1] 5</code></pre>
-<p>In this case, the 24th item in <code>day</code> is 24, and the 24th item in <code>month</code> is 5 which confirms that we created this correctly. We can create the object <code>year</code> to contain 31 repeats of 2017, however, this time, let’s say we wanted to make sure that this object was always the same length as the number of days we have in a month. Instead of specifying <code>31</code>, we can simply get that information using the <code>length()</code> function. Here, we’ll replace <code>31</code> with <code>length(day)</code>, which is equivalent.</p>
+<p>In this case, the 24th item in <code>day</code> is 24, and the 24th item in <code>month</code> is 5 which confirms that we created this correctly.</p>
+<blockquote>
+<p>Type <code>day[32]</code> into your R console. What do you get? What does it mean? Ask yourself the question, “Are there any months with 32 days?”</p>
+</blockquote>
+<p>We can create the object <code>year</code> to contain 31 repeats of 2017, however, this time, let’s say we wanted to make sure that this object was always the same length as the number of days we have in a month. Instead of specifying <code>31</code>, we can simply get that information using the <code>length()</code> function. Here, we’ll replace <code>31</code> with <code>length(day)</code>, which is equivalent.</p>
 <pre class="r"><code>&gt; year &lt;- rep(2017, times = length(day))
 &gt; year</code></pre>
 <pre><code> [1] 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 2017
