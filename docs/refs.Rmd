@@ -10,6 +10,7 @@ title: "References"
    
 # Resources
 
+ - [RStudio Cheat Sheets] great visual maps for data analysis (highly recommend the dplyr, data import, and ggplot2 sheets!)
  - [R style guide] to make sure your code is beautiful because when your code is
    easy to read, your future self will thank you.
  - [UNL Statistics Help Desk] Statistical Cross-disciplinary Collaboration and Consulting Lab (SC3L)
@@ -26,3 +27,4 @@ title: "References"
 [UNL Statistics Help Desk]: http://statistics.unl.edu/help-desk-form
 [Sampling, Data Management and Visualization]: https://atyre2.github.io/data-management/ 
 [R style guide]: http://style.tidyverse.org/
+[RStudio Cheat Sheets]: https://www.rstudio.com/resources/cheatsheets/
