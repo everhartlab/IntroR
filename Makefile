@@ -24,6 +24,7 @@ docs/%.Rmd : %.R docs/knitopts.R
 
 .PHONY : clean
 clean :
+	$(RM) $(R_FILES)
 	R --slave -e "rmarkdown::clean_site('docs')"
 
 .PHONY : cleanjunk
