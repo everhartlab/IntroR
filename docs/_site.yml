@@ -26,7 +26,7 @@ navbar:
         - text: "Workshop Quizzes"
           href: quiz.html
         - text: "Exit Survey"
-          href: coming-soon.html
+          href: https://goo.gl/forms/oDBV8WPXg7DlsS4C3
         - text: "Useful Tools/Links/References"
           href: refs.html
 output:
