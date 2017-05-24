@@ -20,6 +20,28 @@ title: "References"
    reproducibly in R and RStudio with Git and GitHub
  - [Sampling, Data Management and Visualization] UNL Course lead by Dr. Drew Tyre
  
+# Twitter 
+
+Twitter is a great resource for getting help in R. You can browse the \#rstats
+hashtag to see what's going on.
+
+These accounts are great to follow to see what's going on in R
+
+ - [@RLangTip](https://twitter.com/RLangTip) tweets out useful tips and tricks to use R
+ - [@dataandme](https://twitter.com/dataandme) aka Mara Averick often tweets out links to useful tutorials in R
+ - [@juliasilge](https://tiwtter.com/juliasilge) data scientist at StackOverflow
+ - [@_inundata](https://tiwtter.com/_inundata) aka Karthik Ram, a data scientist at the Berkeley Institute for Data Science
+ - [@JennyBryan](https://twitter.com/JennyBryan) currently works at RStudio and very concerned with usability
+ - [@hadleywickham](https://twitter.com/hadleywickham) creator of the tidyverse and cheif data scientist at RStudio
+
+
+ 
+# For Windows UseRs
+
+ Upgrading R on Windows can sometimes be frustrating. The [intstallr R package]
+ helps with this process.
+ 
+ [intstallr R package]: https://www.r-statistics.com/2015/06/a-step-by-step-screenshots-tutorial-for-upgrading-r-on-windows/
 [Happy Git and GitHub for the useR ]: http://happygitwithr.com/
 [swirl]: http://swirlstats.com/
 [tidyverse]: http://tidyverse.org/
