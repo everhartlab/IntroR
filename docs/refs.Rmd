@@ -27,12 +27,12 @@ hashtag to see what's going on.
 
 These accounts are great to follow to see what's going on in R
 
- - [@RLangTip](https://twitter.com/RLangTip) tweets out useful tips and tricks to use R
- - [@dataandme](https://twitter.com/dataandme) aka Mara Averick often tweets out links to useful tutorials in R
- - [@juliasilge](https://tiwtter.com/juliasilge) data scientist at StackOverflow
- - [@_inundata](https://tiwtter.com/_inundata) aka Karthik Ram, a data scientist at the Berkeley Institute for Data Science
- - [@JennyBryan](https://twitter.com/JennyBryan) currently works at RStudio and very concerned with usability
- - [@hadleywickham](https://twitter.com/hadleywickham) creator of the tidyverse and cheif data scientist at RStudio
+ - [\@RLangTip](https://twitter.com/RLangTip) tweets out useful tips and tricks to use R
+ - [\@dataandme](https://twitter.com/dataandme) aka Mara Averick often tweets out links to useful tutorials in R
+ - [\@juliasilge](https://tiwtter.com/juliasilge) data scientist at StackOverflow
+ - [\@_inundata](https://tiwtter.com/_inundata) aka Karthik Ram, a data scientist at the Berkeley Institute for Data Science
+ - [\@JennyBryan](https://twitter.com/JennyBryan) currently works at RStudio and very concerned with usability
+ - [\@hadleywickham](https://twitter.com/hadleywickham) creator of the tidyverse and cheif data scientist at RStudio
 
 
  
