@@ -1,6 +1,6 @@
 HTML_FILES := $(patsubst %.Rmd, %.html ,$(wildcard docs/*.Rmd))
 HTML_FILES := $(filter-out docs/_sessionInfo.html, $(HTML_FILES))
-R_FILES    := $(patsubst %.R, docs/%.html, $(wildcard *.R))
+R_FILES    := $(patsubst %.R, docs/%.html, $(wildcard Part*.R))
 
 .PHONY: all
 all : cleanjunk html
@@ -19,7 +19,7 @@ docs/%.Rmd : %.R docs/knitopts.R
 	R --slave -e "knitr::spin('docs/$<', knit = FALSE)"
 	$(RM) docs/$<
 
-%.html : %.Rmd docs/footer.html docs/_site.yml
+%.html : %.Rmd docs/footer.html docs/_site.yml docs/styles.css
 	R --slave -e "rmarkdown::render_site('$<')"
 
 .PHONY : clean
